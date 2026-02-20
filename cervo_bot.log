@@ -1,0 +1,529 @@
+2026-02-02 13:24:38,268 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.8:5000
+2026-02-02 13:24:38,318 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-02 13:24:38,391 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-02 13:25:15,231 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-02 13:25:15,299 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-02 13:35:13,857 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-02 13:35:16,217 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-02 13:35:59,700 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-02 13:35:59,761 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-10 20:00:17,424 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-10 20:00:17,449 [INFO] __main__:669 - Modo Testing: False
+2026-02-10 20:00:17,451 [INFO] __main__:670 - Telefono permitido: 
+2026-02-10 20:00:17,915 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-10 20:00:17,933 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-10 20:00:17,980 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-10 20:01:05,218 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-10 20:01:05,253 [INFO] __main__:669 - Modo Testing: False
+2026-02-10 20:01:05,305 [INFO] __main__:670 - Telefono permitido: 
+2026-02-10 20:01:05,742 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-10 20:01:05,941 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-10 20:01:54,596 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\check_pnr_safe.py', reloading
+2026-02-10 20:01:55,731 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-10 20:02:37,534 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-10 20:02:37,537 [INFO] __main__:669 - Modo Testing: False
+2026-02-10 20:02:37,541 [INFO] __main__:670 - Telefono permitido: 
+2026-02-10 20:02:37,587 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-10 20:02:37,608 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-10 20:19:57,703 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-10 20:19:59,503 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-10 20:20:53,366 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-10 20:20:53,371 [INFO] __main__:669 - Modo Testing: False
+2026-02-10 20:20:53,379 [INFO] __main__:670 - Telefono permitido: 
+2026-02-10 20:20:53,602 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-10 20:20:53,639 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-10 20:21:17,170 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-10 20:21:19,540 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-10 20:22:10,370 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-10 20:22:10,378 [INFO] __main__:669 - Modo Testing: False
+2026-02-10 20:22:10,383 [INFO] __main__:670 - Telefono permitido: 
+2026-02-10 20:22:10,551 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-10 20:22:10,587 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-10 20:23:11,496 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\check_pnr_safe.py', reloading
+2026-02-10 20:23:12,186 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-10 20:23:54,927 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-10 20:23:54,933 [INFO] __main__:669 - Modo Testing: False
+2026-02-10 20:23:54,936 [INFO] __main__:670 - Telefono permitido: 
+2026-02-10 20:23:55,063 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-10 20:23:55,085 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 00:47:27,287 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 00:47:28,389 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 00:47:49,825 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 00:47:49,825 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 00:47:49,826 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 00:47:49,955 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 00:47:50,013 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 00:53:02,573 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 00:53:02,919 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 00:53:21,661 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 00:53:21,664 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 00:53:21,665 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 00:53:21,709 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 00:53:21,731 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 00:55:14,750 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\check_pnr_safe.py', reloading
+2026-02-11 00:55:15,249 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 00:55:27,709 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 00:55:27,709 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 00:55:27,710 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 00:55:27,784 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 00:55:27,793 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 00:55:45,110 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\check_pnr_safe.py', reloading
+2026-02-11 00:55:45,468 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 00:55:58,058 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 00:55:58,059 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 00:55:58,059 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 00:55:58,081 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 00:55:58,091 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 01:17:21,117 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 01:17:21,440 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 01:17:34,415 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:17:34,417 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:17:34,423 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:17:34,478 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 01:17:34,500 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 01:17:35,607 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 01:17:36,380 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 01:17:51,059 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:17:51,060 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:17:51,061 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:17:51,081 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 01:17:51,092 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 01:20:34,437 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\test_gemini_models.py', reloading
+2026-02-11 01:20:35,062 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 01:21:04,532 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:21:04,534 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:21:04,536 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:21:04,590 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 01:21:04,620 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 01:21:53,713 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 01:21:54,037 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 01:22:15,112 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:22:15,116 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:22:15,122 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:22:15,189 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 01:22:15,208 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 01:25:17,039 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\document_extractor.py', reloading
+2026-02-11 01:25:17,459 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 01:25:27,753 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:25:27,753 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:25:27,754 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:25:27,772 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 01:25:27,782 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 01:25:44,135 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\config.py', reloading
+2026-02-11 01:25:44,663 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 01:25:59,222 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:25:59,223 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:25:59,224 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:25:59,244 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 01:25:59,256 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 01:27:37,453 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:27:37,463 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:27:37,467 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:27:37,717 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 01:27:37,722 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 01:27:37,732 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 01:27:58,847 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:27:58,848 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:27:58,848 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:27:58,882 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 01:27:58,895 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 01:48:05,439 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 01:48:06,057 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 01:48:20,646 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:48:20,647 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:48:20,648 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:48:20,736 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 01:48:20,753 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 01:48:27,998 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 01:48:28,340 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 01:48:49,064 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:48:49,066 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:48:49,068 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:48:49,102 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 01:48:49,116 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 01:49:21,512 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:49:21,515 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:49:21,516 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:49:21,678 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 01:49:21,691 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 01:49:21,725 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 01:49:43,115 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 01:49:43,117 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 01:49:43,119 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 01:49:43,181 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 01:49:43,205 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:01:11,151 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:01:11,154 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:01:11,155 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:01:11,410 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 02:01:11,413 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 02:01:11,461 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:01:24,502 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:01:24,503 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:01:24,504 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:01:24,534 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 02:01:24,552 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:20:00,351 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 02:20:00,679 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:20:14,338 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:20:14,338 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:20:14,339 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:20:14,353 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 02:20:14,359 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:20:35,389 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:20:35,390 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:20:35,391 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:20:35,431 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 02:20:35,434 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 02:20:35,437 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:20:45,337 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:20:45,337 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:20:45,338 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:20:45,358 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 02:20:45,369 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:35:17,026 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 02:35:17,378 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:35:32,242 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:35:32,243 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:35:32,244 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:35:32,273 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 02:35:32,284 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:36:01,758 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:36:01,760 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:36:01,761 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:36:01,826 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 02:36:01,829 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 02:36:01,835 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:36:17,273 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:36:17,274 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:36:17,274 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:36:17,292 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 02:36:17,299 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:41:11,078 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\flight_booking_service.py', reloading
+2026-02-11 02:41:11,383 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:41:20,166 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:41:20,166 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:41:20,167 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:41:20,183 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 02:41:20,190 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:41:43,527 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\flight_booking_service.py', reloading
+2026-02-11 02:41:43,846 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:41:59,166 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:41:59,168 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:41:59,171 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:41:59,194 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 02:41:59,206 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:42:46,003 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:42:46,041 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:42:46,086 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:42:46,447 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 02:42:46,473 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 02:42:46,480 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:43:04,373 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:43:04,374 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:43:04,375 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:43:04,406 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 02:43:04,423 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:48:00,613 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 02:48:01,183 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:48:42,732 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:48:42,733 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:48:42,734 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:48:42,788 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 02:48:42,794 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 02:48:42,801 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:48:59,705 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:48:59,711 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:48:59,716 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:48:59,796 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 02:48:59,836 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:49:02,110 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 02:49:03,658 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:49:45,893 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:49:45,893 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:49:45,894 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:49:45,939 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 02:49:45,940 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 02:49:45,944 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 02:50:03,884 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:50:03,885 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:50:03,885 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:50:03,907 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 02:50:03,916 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 02:59:58,759 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 02:59:58,761 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 02:59:58,761 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 02:59:58,806 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 02:59:58,807 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 02:59:58,813 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:00:13,475 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:00:13,476 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:00:13,476 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:00:13,499 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:00:13,513 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:15:24,109 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-11 03:15:24,446 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:15:31,773 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:15:31,774 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:15:31,774 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:15:31,818 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:15:31,825 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:16:53,212 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:16:53,212 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:16:53,213 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:16:53,239 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 03:16:53,240 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 03:16:53,243 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:16:59,588 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:16:59,588 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:16:59,589 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:16:59,602 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:16:59,608 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:19:14,844 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\flight_booking_service.py', reloading
+2026-02-11 03:19:15,165 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:19:27,418 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:19:27,418 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:19:27,419 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:19:27,438 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:19:27,446 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:20:23,583 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:20:23,584 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:20:23,587 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:20:23,636 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 03:20:23,641 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 03:20:23,648 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:20:39,546 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:20:39,546 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:20:39,547 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:20:39,576 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:20:39,586 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:22:25,173 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\flight_booking_service.py', reloading
+2026-02-11 03:22:25,658 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:22:40,922 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:22:40,923 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:22:40,923 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:22:40,944 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:22:40,954 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:23:13,299 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:23:13,303 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:23:13,306 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:23:13,399 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 03:23:13,405 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 03:23:13,413 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:23:26,198 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:23:26,200 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:23:26,200 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:23:26,221 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:23:26,230 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:23:56,682 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\flight_booking_service.py', reloading
+2026-02-11 03:23:57,053 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:24:12,868 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:24:12,869 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:24:12,869 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:24:12,897 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:24:12,913 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:24:19,091 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\flight_booking_service.py', reloading
+2026-02-11 03:24:19,782 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:24:32,139 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:24:32,140 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:24:32,141 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:24:32,180 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:24:32,196 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:35:16,783 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\debug_search.py', reloading
+2026-02-11 03:35:17,205 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:35:25,656 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:35:25,657 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:35:25,658 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:35:25,680 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:35:25,686 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:36:07,238 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\debug_search.py', reloading
+2026-02-11 03:36:07,529 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:36:15,707 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:36:15,707 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:36:15,708 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:36:15,724 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:36:15,734 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:38:16,215 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\kiu_service.py', reloading
+2026-02-11 03:38:16,540 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:38:26,144 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:38:26,146 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:38:26,147 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:38:26,177 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:38:26,199 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:39:39,515 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:39:39,516 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:39:39,516 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:39:39,567 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 03:39:39,569 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 03:39:39,573 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:39:51,602 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:39:51,602 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:39:51,603 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:39:51,619 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:39:51,626 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:41:06,627 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\flight_booking_service.py', reloading
+2026-02-11 03:41:07,025 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:41:17,124 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:41:17,125 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:41:17,126 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:41:17,143 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:41:17,151 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:42:23,548 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:42:23,553 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:42:23,555 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:42:23,619 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.12:5000
+2026-02-11 03:42:23,627 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-11 03:42:23,638 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:42:32,830 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:42:32,831 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:42:32,831 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:42:32,855 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:42:32,866 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:43:12,397 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\flight_booking_service.py', reloading
+2026-02-11 03:43:12,712 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:43:20,360 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:43:20,360 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:43:20,361 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:43:20,380 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:43:20,390 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-11 03:55:41,018 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\flight_booking_service.py', reloading
+2026-02-11 03:55:41,540 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-11 03:55:48,206 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-11 03:55:48,207 [INFO] __main__:669 - Modo Testing: False
+2026-02-11 03:55:48,207 [INFO] __main__:670 - Telefono permitido: 
+2026-02-11 03:55:48,221 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-11 03:55:48,226 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-16 13:16:37,830 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:16:37,900 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:16:37,901 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:16:39,149 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.101:5000
+2026-02-16 13:16:39,149 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-16 13:16:39,227 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-16 13:16:55,837 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:16:55,837 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:16:55,838 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:16:55,925 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-16 13:16:55,964 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-16 13:17:07,571 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-16 13:17:08,886 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-16 13:17:31,230 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:17:31,231 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:17:31,231 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:17:31,658 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-16 13:17:31,675 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-16 13:18:03,932 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:18:03,932 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:18:03,933 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:18:04,103 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.101:5000
+2026-02-16 13:18:04,109 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-16 13:18:04,119 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-16 13:18:14,171 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:18:14,172 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:18:14,172 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:18:14,209 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-16 13:18:14,242 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-16 13:26:04,165 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-16 13:26:04,898 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-16 13:26:32,170 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:26:32,171 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:26:32,171 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:26:32,199 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.101:5000
+2026-02-16 13:26:32,199 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-16 13:26:32,202 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-16 13:26:40,560 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:26:40,560 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:26:40,561 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:26:40,582 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-16 13:26:40,591 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-16 13:36:34,920 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-16 13:36:35,812 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-16 13:36:45,001 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:36:45,002 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:36:45,002 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:36:45,015 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-16 13:36:45,020 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-16 13:41:58,362 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:41:58,362 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:41:58,363 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:41:58,385 [INFO] werkzeug:96 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.101:5000
+2026-02-16 13:41:58,385 [INFO] werkzeug:96 - [33mPress CTRL+C to quit[0m
+2026-02-16 13:41:58,387 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-16 13:42:04,049 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:42:04,049 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:42:04,050 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:42:04,064 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-16 13:42:04,069 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-16 13:51:11,545 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot.py', reloading
+2026-02-16 13:51:12,086 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-16 13:51:20,055 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 13:51:20,055 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 13:51:20,055 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 13:51:20,072 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-16 13:51:20,079 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340
+2026-02-16 23:04:32,757 [INFO] werkzeug:96 -  * Detected change in 'C:\\Users\\RAFAMORELLI\\Documents\\chatbotwati - copia\\gemini_agent_bot_original.py', reloading
+2026-02-16 23:04:33,361 [INFO] werkzeug:96 -  * Restarting with stat
+2026-02-16 23:04:49,543 [INFO] __main__:668 - Iniciando servidor en puerto 5000
+2026-02-16 23:04:49,543 [INFO] __main__:669 - Modo Testing: False
+2026-02-16 23:04:49,543 [INFO] __main__:670 - Telefono permitido: 
+2026-02-16 23:04:49,557 [WARNING] werkzeug:96 -  * Debugger is active!
+2026-02-16 23:04:49,563 [INFO] werkzeug:96 -  * Debugger PIN: 652-141-340

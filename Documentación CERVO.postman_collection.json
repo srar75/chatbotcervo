@@ -1,0 +1,1573 @@
+{
+	"info": {
+		"_postman_id": "48ef45d1-93fc-4e65-92af-ab2bf2d2f4d8",
+		"name": "Documentación CERVO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26743030",
+		"_collection_link": "https://cervotests.postman.co/workspace/CERVO-CHAT-BOT~efc628c7-ba94-4df6-a4ca-733b84abeb3e/collection/26743030-48ef45d1-93fc-4e65-92af-ab2bf2d2f4d8?action=share&source=collection_link&creator=26743030"
+	},
+	"item": [
+		{
+			"name": "Remisiónes",
+			"item": [
+				{
+					"name": "obtener datos por paquete_id (vid)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"packageStatus\": null,\n    \"vid\": 716702,\n    \"antiquityDays\": null,\n    \"page\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/purchases?reemision=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"purchases"
+							],
+							"query": [
+								{
+									"key": "reemision",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "obtener datos por paquete_id (vid)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, text/plain, */*"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"packageStatus\": null,\n    \"vid\": 716702,\n    \"antiquityDays\": null,\n    \"page\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/purchases?reemision=true",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"purchases"
+									],
+									"query": [
+										{
+											"key": "reemision",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"count\": 1,\n    \"pageSize\": 15,\n    \"data\": [\n        {\n            \"type\": \"vuelos\",\n            \"vid\": 716702,\n            \"criterion\": {\n                \"loc\": \"FIWPOQ\",\n                \"date\": \"2025-12-01 14:01:31\"\n            },\n            \"details\": {\n                \"details\": \"ES8314 PMV-CCS\",\n                \"date\": \"07/01/2026 07:00:00\"\n            },\n            \"alt\": 4,\n            \"cliente\": \"Prueba Prueba\",\n            \"cliente_id\": 1326,\n            \"status\": \"Cancelada\",\n            \"recordatorios\": 0,\n            \"requerimientos\": 0,\n            \"gds\": \"kiu\",\n            \"state\": {\n                \"estado\": 1,\n                \"vencido\": 1,\n                \"emitido\": 0,\n                \"cancelada\": 1\n            },\n            \"desglose\": {\n                \"moneda\": \"$\",\n                \"moneda_id\": 2,\n                \"servicios\": [\n                    {\n                        \"Servicio\": \"PMV-CCS\",\n                        \"i_vue\": 0,\n                        \"Fecha\": \"07/01/2026\",\n                        \"Vuelo\": \"ES 8314 07:00:00\",\n                        \"Pax\": 1,\n                        \"PaxType\": \"adl\",\n                        \"Base\": 39.19,\n                        \"Impuestos\": 55.82,\n                        \"Sub Total \": 95.01,\n                        \"Total\": 95.01\n                    }\n                ],\n                \"paxs\": [\n                    {\n                        \"tipo\": \"ADL\",\n                        \"numero\": \"1\",\n                        \"nombreCompleto\": \"JOSE QUIJADA (V26842215)\"\n                    }\n                ],\n                \"subtotales\": {\n                    \"SubTotal Cliente:\": 95.01,\n                    \"Fee LYL:\": 1.5,\n                    \"Total PVP:\": 96.51\n                },\n                \"total\": {\n                    \"TOTAL CLIENTE SUGERIDO:\": \"$ 96.51\",\n                    \"Total Cargos:\": \"$ 1.50\",\n                    \"Total Impuestos\": \"$ 55.82\",\n                    \"Monto sujeto a comisión:\": \"$ 39.19\",\n                    \"Total comisión:\": \"$ 0.00\",\n                    \"TOTAL A PAGAR L&L TOURS:\": \"$ 96.51\"\n                },\n                \"comentarios\": \"\"\n            },\n            \"balance\": \"$ 96.51\",\n            \"moneda_id\": 2,\n            \"servicio_id\": 0,\n            \"internacional\": false\n        }\n    ],\n    \"total\": {\n        \"TOTAL CLIENTE SUGERIDO:\": \"$ 96.51\",\n        \"Total Cargos:\": \"$ 1.50\",\n        \"Total Impuestos\": \"$ 55.82\",\n        \"Monto sujeto a comisión:\": \"$ 39.19\",\n        \"Total comisión:\": \"$ 0.00\",\n        \"comision\": 0,\n        \"TOTAL A PAGAR L&L TOURS:\": \"$ 96.51\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "obtener datos por PNR",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/v1/purchases?reemision=true&pnr=FIWPOQ",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"purchases"
+							],
+							"query": [
+								{
+									"key": "reemision",
+									"value": "true"
+								},
+								{
+									"key": "pnr",
+									"value": "FIWPOQ"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "obtener datos por PNR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json, text/plain, */*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/v1/purchases?reemision=true&pnr=FIWPOQ",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"purchases"
+									],
+									"query": [
+										{
+											"key": "reemision",
+											"value": "true"
+										},
+										{
+											"key": "pnr",
+											"value": "FIWPOQ"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"count\": 1,\n    \"pageSize\": 15,\n    \"data\": [\n        {\n            \"type\": \"vuelos\",\n            \"vid\": 716702,\n            \"criterion\": {\n                \"loc\": \"FIWPOQ\",\n                \"date\": \"2025-12-01 14:01:31\"\n            },\n            \"details\": {\n                \"details\": \"ES8314 PMV-CCS\",\n                \"date\": \"07/01/2026 07:00:00\"\n            },\n            \"alt\": 4,\n            \"cliente\": \"Prueba Prueba\",\n            \"cliente_id\": 1326,\n            \"status\": \"Cancelada\",\n            \"recordatorios\": 0,\n            \"requerimientos\": 0,\n            \"gds\": \"kiu\",\n            \"state\": {\n                \"estado\": 1,\n                \"vencido\": 1,\n                \"emitido\": 0,\n                \"cancelada\": 1\n            },\n            \"desglose\": {\n                \"moneda\": \"$\",\n                \"moneda_id\": 2,\n                \"servicios\": [\n                    {\n                        \"Servicio\": \"PMV-CCS\",\n                        \"i_vue\": 0,\n                        \"Fecha\": \"07/01/2026\",\n                        \"Vuelo\": \"ES 8314 07:00:00\",\n                        \"Pax\": 1,\n                        \"PaxType\": \"adl\",\n                        \"Base\": 39.19,\n                        \"Impuestos\": 55.82,\n                        \"Sub Total \": 95.01,\n                        \"Total\": 95.01\n                    }\n                ],\n                \"paxs\": [\n                    {\n                        \"tipo\": \"ADL\",\n                        \"numero\": \"1\",\n                        \"nombreCompleto\": \"JOSE QUIJADA (V26842215)\"\n                    }\n                ],\n                \"subtotales\": {\n                    \"SubTotal Cliente:\": 95.01,\n                    \"Fee LYL:\": 1.5,\n                    \"Total PVP:\": 96.51\n                },\n                \"total\": {\n                    \"TOTAL CLIENTE SUGERIDO:\": \"$ 96.51\",\n                    \"Total Cargos:\": \"$ 1.50\",\n                    \"Total Impuestos\": \"$ 55.82\",\n                    \"Monto sujeto a comisión:\": \"$ 39.19\",\n                    \"Total comisión:\": \"$ 0.00\",\n                    \"TOTAL A PAGAR L&L TOURS:\": \"$ 96.51\"\n                },\n                \"comentarios\": \"\"\n            },\n            \"balance\": \"$ 96.51\",\n            \"moneda_id\": 2,\n            \"servicio_id\": 0,\n            \"internacional\": false\n        }\n    ],\n    \"total\": {\n        \"TOTAL CLIENTE SUGERIDO:\": \"$ 96.51\",\n        \"Total Cargos:\": \"$ 1.50\",\n        \"Total Impuestos\": \"$ 55.82\",\n        \"Monto sujeto a comisión:\": \"$ 39.19\",\n        \"Total comisión:\": \"$ 0.00\",\n        \"comision\": 0,\n        \"TOTAL A PAGAR L&L TOURS:\": \"$ 96.51\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "remision",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "es-US,es-419;q=0.9,es;q=0.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:4200"
+							},
+							{
+								"key": "Referer",
+								"value": "http://localhost:4200/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"count\": 1,\n    \"pageSize\": 15,\n    \"data\": [\n        {\n            \"type\": \"vuelos\",\n            \"vid\": 716702,\n            \"criterion\": {\n                \"loc\": \"FIWPOQ\",\n                \"date\": \"2025-12-01 14:01:31\"\n            },\n            \"details\": {\n                \"details\": \"ES8314 PMV-CCS\",\n                \"date\": \"07/01/2026 07:00:00\"\n            },\n            \"alt\": 4,\n            \"cliente\": \"Prueba Prueba\",\n            \"cliente_id\": 1326,\n            \"status\": \"Cancelada\",\n            \"recordatorios\": 0,\n            \"requerimientos\": 0,\n            \"gds\": \"kiu\",\n            \"state\": {\n                \"estado\": 1,\n                \"vencido\": 1,\n                \"emitido\": 0,\n                \"cancelada\": 1\n            },\n            \"desglose\": {\n                \"moneda\": \"$\",\n                \"moneda_id\": 2,\n                \"servicios\": [\n                    {\n                        \"Servicio\": \"PMV-CCS\",\n                        \"i_vue\": 0,\n                        \"Fecha\": \"07/01/2026\",\n                        \"Vuelo\": \"ES 8314 07:00:00\",\n                        \"Pax\": 1,\n                        \"PaxType\": \"adl\",\n                        \"Base\": 40,\n                        \"Impuestos\": 56,\n                        \"Sub Total \": 95.01,\n                        \"Total\": 95.01\n                    }\n                ],\n                \"paxs\": [\n                    {\n                        \"tipo\": \"ADL\",\n                        \"numero\": \"1\",\n                        \"nombreCompleto\": \"JUAN RODRIGUEZ (V123456)\"\n                    }\n                ],\n                \"subtotales\": {\n                    \"SubTotal Cliente:\": 95.01,\n                    \"Fee LYL:\": 2,\n                    \"Total PVP:\": 96.51\n                },\n                \"total\": {\n                    \"TOTAL CLIENTE SUGERIDO:\": \"$ 96.51\",\n                    \"Total Cargos:\": \"$ 1.50\",\n                    \"Total Impuestos\": \"$ 55.82\",\n                    \"Monto sujeto a comisión:\": \"$ 39.19\",\n                    \"Total comisión:\": \"$ 0.00\",\n                    \"TOTAL A PAGAR L&L TOURS:\": \"$ 96.51\"\n                },\n                \"comentarios\": \"\"\n            },\n            \"balance\": \"$ 96.51\",\n            \"moneda_id\": 2,\n            \"servicio_id\": 0,\n            \"internacional\": false\n        }\n    ],\n    \"total\": {\n        \"TOTAL CLIENTE SUGERIDO:\": \"$ 96.51\",\n        \"Total Cargos:\": \"$ 1.50\",\n        \"Total Impuestos\": \"$ 55.82\",\n        \"Monto sujeto a comisión:\": \"$ 39.19\",\n        \"Total comisión:\": \"$ 0.00\",\n        \"comision\": 10,\n        \"TOTAL A PAGAR L&L TOURS:\": \"$ 96.51\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/purchases/716702/remission",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"purchases",
+								"716702",
+								"remission"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vuelos. Retomar reserva",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es-US,es-419;q=0.9,es;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTc2MzEyNzE0OSwiZXhwIjozMDE0NTUyNzE0OSwibmJmIjoxNzYzMTI3MTQ5LCJqdGkiOiJRS0tOMjhKd1JCRHRZTUJEIiwic3ViIjoiMjI4NCIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImRlNzZlZDQzZGNiNjE5OWYxYjE0OWZlNzg5OGZkMTA5In0.qYZakqz27VNLleyij7Gu2pDDd05YrqVMREiCnei-3e4"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:4200"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/v1/booking/flight-orders/716702/rebook?vue=0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"booking",
+						"flight-orders",
+						"716702",
+						"rebook"
+					],
+					"query": [
+						{
+							"key": "vue",
+							"value": "0"
+						}
+					]
+				},
+				"description": "Objetivo  \nRetomar (rebook) una reserva de vuelo existente.\n\nEjecuta el rebooking del vuelo-orden del viaje indicado en la URL.\n\nMétodo y URL  \nPOST {{baseUrl}}[/v1/booking/flight-orders/:flightOrderId/rebook?vue=0](http://localhost/v1/booking/flight-orders/:flightOrderId/rebook?vue=0)\n\n- En esta solicitud específica: POST {{baseUrl}}[/v1/booking/flight-orders/816679/rebook?vue=0](http://localhost/v1/booking/flight-orders/816679/rebook?vue=0)\n    \n\nAutenticación\n\n- Tipo: Bearer Token (JWT) en el header Authorization.\n    \n\nParámetros de consulta\n\n- vue (number | string): 0 indica el servicio_id que va a ser retomado. Valor por defecto usado aquí: 0.\n    \n\nParámetros de ruta\n\n- viaje_id (number): ID del viaje que contiene el vuelo a retomar. En esta solicitud: 816679."
+			},
+			"response": [
+				{
+					"name": "Vuelos. Retomar reserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "es-US,es-419;q=0.9,es;q=0.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTc2MzEyNzE0OSwiZXhwIjozMDE0NTUyNzE0OSwibmJmIjoxNzYzMTI3MTQ5LCJqdGkiOiJRS0tOMjhKd1JCRHRZTUJEIiwic3ViIjoiMjI4NCIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImRlNzZlZDQzZGNiNjE5OWYxYjE0OWZlNzg5OGZkMTA5In0.qYZakqz27VNLleyij7Gu2pDDd05YrqVMREiCnei-3e4"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:4200"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Referer",
+								"value": "http://localhost:4200/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/v1/booking/flight-orders/716702/rebook?vue=0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"booking",
+								"flight-orders",
+								"716702",
+								"rebook"
+							],
+							"query": [
+								{
+									"key": "vue",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"vid\": 716703,\n    \"sesion_json\": {\n        \"vuelo\": [\n            {\n                \"gds\": \"kiu\",\n                \"no\": 0,\n                \"fl_partida_cod\": \"PMV\",\n                \"fl_partida\": \"Porlamar\",\n                \"fl_destino_cod\": \"CCS\",\n                \"fl_destino\": \"Caracas - Simón Bolívar Intl\",\n                \"ruta\": \"PMV-CCS\",\n                \"adl\": 1,\n                \"ted\": 0,\n                \"chd\": 0,\n                \"inf\": 0,\n                \"loc\": \"ETKTLB\",\n                \"kiu_moneda\": 2,\n                \"fl_fecha_ida\": \"20/01/2026\",\n                \"vue\": [\n                    {\n                        \"1\": 1,\n                        \"2\": 0,\n                        \"3\": 0,\n                        \"4\": 0,\n                        \"fl_linea_aerea_cod\": \"5R\",\n                        \"fl_linea_aerea\": \"Rutaca\",\n                        \"fl_partida_cod\": \"PMV\",\n                        \"fl_partida\": \"Porlamar\",\n                        \"fl_destino_cod\": \"CCS\",\n                        \"fl_destino\": \"Caracas - Simón Bolívar Intl\",\n                        \"fl_fecha\": \"20/01/2026\",\n                        \"ruta\": \"PMV-CCS\",\n                        \"fl_num_vuelo\": \"303\",\n                        \"fl_clase\": \"T\",\n                        \"fl_hora_salida\": \"12:00:00\",\n                        \"fl_hora_llegada\": \"12:40:00\",\n                        \"fl_hora_salida_txt\": \"12:00 PM\",\n                        \"fl_hora_llegada_txt\": \"12:40 PM\",\n                        \"prepagado\": 0,\n                        \"kiu\": {\n                            \"base\": 47.73,\n                            \"6I\": 1.43,\n                            \"6N\": 9.55,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.48\n                        },\n                        \"kiudesglose\": [\n                            {\n                                \"type\": \"ADT\",\n                                \"quantity\": \"1\",\n                                \"rates\": {\n                                    \"base\": 47.73,\n                                    \"6I\": 1.43,\n                                    \"6N\": 9.55,\n                                    \"AK\": 13,\n                                    \"C2\": 1.25,\n                                    \"EU\": 0.48\n                                },\n                                \"tipo\": \"ADT\",\n                                \"cantidad\": \"1\",\n                                \"tasas\": {\n                                    \"base\": 47.73,\n                                    \"6I\": 1.43,\n                                    \"6N\": 9.55,\n                                    \"AK\": 13,\n                                    \"C2\": 1.25,\n                                    \"EU\": 0.48\n                                }\n                            }\n                        ],\n                        \"internacional\": 0,\n                        \"desc_trans\": 0\n                    }\n                ],\n                \"precio\": [\n                    {\n                        \"adl\": {\n                            \"usd\": {\n                                \"base\": 47.73,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 9.5,\n                                \"subtotal\": 47.73,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.48,\n                                \"Q\": 0,\n                                \"YR\": 25.23,\n                                \"ft_total\": 0.48,\n                                \"impuestos\": 25.71,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.5,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.5,\n                                \"ft\": 0.015,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 73.44,\n                                \"total\": 73.44,\n                                \"total_full\": 74.94,\n                                \"base_format\": \"$ 47.73\",\n                                \"fee_avt_format\": \"$ 0.00\",\n                                \"comision_format\": \"$ 0.00\",\n                                \"fee_porc_format\": \"$ 9.50\",\n                                \"subtotal_format\": \"$ 47.73\",\n                                \"YN_format\": \"$ 0.00\",\n                                \"IVA_format\": \"$ 0.00\",\n                                \"FT_format\": \"$ 0.48\",\n                                \"Q_format\": \"$ 0.00\",\n                                \"YR_format\": \"$ 25.23\",\n                                \"ft_total_format\": \"$ 0.48\",\n                                \"impuestos_format\": \"$ 25.71\",\n                                \"costo_tc_format\": \"$ 0.00\",\n                                \"costo_islr_format\": \"$ 0.00\",\n                                \"costo_idb_format\": \"$ 0.00\",\n                                \"costo_igtf_format\": \"$ 0.00\",\n                                \"gastos_tc_format\": \"$ 0.00\",\n                                \"fee_format\": \"$ 1.50\",\n                                \"descuento_trans_format\": \"$ 0.00\",\n                                \"com_avt_format\": \"$ 0.00\",\n                                \"comision_avt_format\": \"$ 0.00\",\n                                \"over_comision_avt_format\": \"$ 0.00\",\n                                \"FEE_format\": \"$ 0.00\",\n                                \"fee_tot_format\": \"$ 1.50\",\n                                \"ft_format\": \"$ 0.02\",\n                                \"prepago_format\": \"$ 0.00\",\n                                \"pvp_iva_format\": \"$ 0.00\",\n                                \"cash_tot_format\": \"$ 73.44\",\n                                \"total_format\": \"$ 73.44\",\n                                \"total_full_format\": \"$ 74.94\"\n                            },\n                            \"bsf\": {\n                                \"base\": 47.73,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 7.5,\n                                \"subtotal\": 47.73,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.48,\n                                \"Q\": 0,\n                                \"YR\": 25.23,\n                                \"ft_total\": 0.48,\n                                \"impuestos\": 25.71,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.5,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.5,\n                                \"ft\": 0.015,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 73.44,\n                                \"total\": 73.44,\n                                \"total_full\": 74.94,\n                                \"base_format\": \"47,73 Bs\",\n                                \"fee_avt_format\": \"0,00 Bs\",\n                                \"comision_format\": \"0,00 Bs\",\n                                \"fee_porc_format\": \"7,50 Bs\",\n                                \"subtotal_format\": \"47,73 Bs\",\n                                \"YN_format\": \"0,00 Bs\",\n                                \"IVA_format\": \"0,00 Bs\",\n                                \"FT_format\": \"0,48 Bs\",\n                                \"Q_format\": \"0,00 Bs\",\n                                \"YR_format\": \"25,23 Bs\",\n                                \"ft_total_format\": \"0,48 Bs\",\n                                \"impuestos_format\": \"25,71 Bs\",\n                                \"costo_tc_format\": \"0,00 Bs\",\n                                \"costo_islr_format\": \"0,00 Bs\",\n                                \"costo_idb_format\": \"0,00 Bs\",\n                                \"costo_igtf_format\": \"0,00 Bs\",\n                                \"gastos_tc_format\": \"0,00 Bs\",\n                                \"fee_format\": \"1,50 Bs\",\n                                \"descuento_trans_format\": \"0,00 Bs\",\n                                \"com_avt_format\": \"0,00 Bs\",\n                                \"comision_avt_format\": \"0,00 Bs\",\n                                \"over_comision_avt_format\": \"0,00 Bs\",\n                                \"FEE_format\": \"0,00 Bs\",\n                                \"fee_tot_format\": \"1,50 Bs\",\n                                \"ft_format\": \"0,02 Bs\",\n                                \"prepago_format\": \"0,00 Bs\",\n                                \"pvp_iva_format\": \"0,00 Bs\",\n                                \"cash_tot_format\": \"73,44 Bs\",\n                                \"total_format\": \"73,44 Bs\",\n                                \"total_full_format\": \"74,94 Bs\"\n                            },\n                            \"eur\": {\n                                \"base\": 41.86842105263158,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 12.5,\n                                \"subtotal\": 41.86842105263158,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.48,\n                                \"Q\": 0,\n                                \"YR\": 25.23,\n                                \"ft_total\": 0.48,\n                                \"impuestos\": 25.71,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.3157894736842106,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.3157894736842106,\n                                \"ft\": 0.013157894736842106,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 67.57842105263158,\n                                \"total\": 67.57842105263158,\n                                \"total_full\": 68.89421052631579,\n                                \"base_format\": \"41,87 €\",\n                                \"fee_avt_format\": \"0,00 €\",\n                                \"comision_format\": \"0,00 €\",\n                                \"fee_porc_format\": \"12,50 €\",\n                                \"subtotal_format\": \"41,87 €\",\n                                \"YN_format\": \"0,00 €\",\n                                \"IVA_format\": \"0,00 €\",\n                                \"FT_format\": \"0,48 €\",\n                                \"Q_format\": \"0,00 €\",\n                                \"YR_format\": \"25,23 €\",\n                                \"ft_total_format\": \"0,48 €\",\n                                \"impuestos_format\": \"25,71 €\",\n                                \"costo_tc_format\": \"0,00 €\",\n                                \"costo_islr_format\": \"0,00 €\",\n                                \"costo_idb_format\": \"0,00 €\",\n                                \"costo_igtf_format\": \"0,00 €\",\n                                \"gastos_tc_format\": \"0,00 €\",\n                                \"fee_format\": \"1,32 €\",\n                                \"descuento_trans_format\": \"0,00 €\",\n                                \"com_avt_format\": \"0,00 €\",\n                                \"comision_avt_format\": \"0,00 €\",\n                                \"over_comision_avt_format\": \"0,00 €\",\n                                \"FEE_format\": \"0,00 €\",\n                                \"fee_tot_format\": \"1,32 €\",\n                                \"ft_format\": \"0,01 €\",\n                                \"prepago_format\": \"0,00 €\",\n                                \"pvp_iva_format\": \"0,00 €\",\n                                \"cash_tot_format\": \"67,58 €\",\n                                \"total_format\": \"67,58 €\",\n                                \"total_full_format\": \"68,89 €\"\n                            }\n                        },\n                        \"Total\": {\n                            \"usd\": {\n                                \"base\": 47.73,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 9.5,\n                                \"subtotal\": 47.73,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.48,\n                                \"Q\": 0,\n                                \"YR\": 25.23,\n                                \"ft_total\": 0.48,\n                                \"impuestos\": 25.71,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.5,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.5,\n                                \"ft\": 0.015,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 73.44,\n                                \"total\": 73.44,\n                                \"total_full\": 74.94,\n                                \"base_format\": \"$ 47.73\",\n                                \"fee_avt_format\": \"$ 0.00\",\n                                \"comision_format\": \"$ 0.00\",\n                                \"fee_porc_format\": \"$ 9.50\",\n                                \"subtotal_format\": \"$ 47.73\",\n                                \"YN_format\": \"$ 0.00\",\n                                \"IVA_format\": \"$ 0.00\",\n                                \"FT_format\": \"$ 0.48\",\n                                \"Q_format\": \"$ 0.00\",\n                                \"YR_format\": \"$ 25.23\",\n                                \"ft_total_format\": \"$ 0.48\",\n                                \"impuestos_format\": \"$ 25.71\",\n                                \"costo_tc_format\": \"$ 0.00\",\n                                \"costo_islr_format\": \"$ 0.00\",\n                                \"costo_idb_format\": \"$ 0.00\",\n                                \"costo_igtf_format\": \"$ 0.00\",\n                                \"gastos_tc_format\": \"$ 0.00\",\n                                \"fee_format\": \"$ 1.50\",\n                                \"descuento_trans_format\": \"$ 0.00\",\n                                \"com_avt_format\": \"$ 0.00\",\n                                \"comision_avt_format\": \"$ 0.00\",\n                                \"over_comision_avt_format\": \"$ 0.00\",\n                                \"FEE_format\": \"$ 0.00\",\n                                \"fee_tot_format\": \"$ 1.50\",\n                                \"ft_format\": \"$ 0.02\",\n                                \"prepago_format\": \"$ 0.00\",\n                                \"pvp_iva_format\": \"$ 0.00\",\n                                \"cash_tot_format\": \"$ 73.44\",\n                                \"total_format\": \"$ 73.44\",\n                                \"total_full_format\": \"$ 74.94\"\n                            },\n                            \"bsf\": {\n                                \"base\": 47.73,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 7.5,\n                                \"subtotal\": 47.73,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.48,\n                                \"Q\": 0,\n                                \"YR\": 25.23,\n                                \"ft_total\": 0.48,\n                                \"impuestos\": 25.71,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.5,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.5,\n                                \"ft\": 0.015,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 73.44,\n                                \"total\": 73.44,\n                                \"total_full\": 74.94,\n                                \"base_format\": \"47,73 Bs\",\n                                \"fee_avt_format\": \"0,00 Bs\",\n                                \"comision_format\": \"0,00 Bs\",\n                                \"fee_porc_format\": \"7,50 Bs\",\n                                \"subtotal_format\": \"47,73 Bs\",\n                                \"YN_format\": \"0,00 Bs\",\n                                \"IVA_format\": \"0,00 Bs\",\n                                \"FT_format\": \"0,48 Bs\",\n                                \"Q_format\": \"0,00 Bs\",\n                                \"YR_format\": \"25,23 Bs\",\n                                \"ft_total_format\": \"0,48 Bs\",\n                                \"impuestos_format\": \"25,71 Bs\",\n                                \"costo_tc_format\": \"0,00 Bs\",\n                                \"costo_islr_format\": \"0,00 Bs\",\n                                \"costo_idb_format\": \"0,00 Bs\",\n                                \"costo_igtf_format\": \"0,00 Bs\",\n                                \"gastos_tc_format\": \"0,00 Bs\",\n                                \"fee_format\": \"1,50 Bs\",\n                                \"descuento_trans_format\": \"0,00 Bs\",\n                                \"com_avt_format\": \"0,00 Bs\",\n                                \"comision_avt_format\": \"0,00 Bs\",\n                                \"over_comision_avt_format\": \"0,00 Bs\",\n                                \"FEE_format\": \"0,00 Bs\",\n                                \"fee_tot_format\": \"1,50 Bs\",\n                                \"ft_format\": \"0,02 Bs\",\n                                \"prepago_format\": \"0,00 Bs\",\n                                \"pvp_iva_format\": \"0,00 Bs\",\n                                \"cash_tot_format\": \"73,44 Bs\",\n                                \"total_format\": \"73,44 Bs\",\n                                \"total_full_format\": \"74,94 Bs\"\n                            },\n                            \"eur\": {\n                                \"base\": 41.86842105263158,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 12.5,\n                                \"subtotal\": 41.86842105263158,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.48,\n                                \"Q\": 0,\n                                \"YR\": 25.23,\n                                \"ft_total\": 0.48,\n                                \"impuestos\": 25.71,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.3157894736842106,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.3157894736842106,\n                                \"ft\": 0.013157894736842106,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 67.57842105263158,\n                                \"total\": 67.57842105263158,\n                                \"total_full\": 68.89421052631579,\n                                \"base_format\": \"41,87 €\",\n                                \"fee_avt_format\": \"0,00 €\",\n                                \"comision_format\": \"0,00 €\",\n                                \"fee_porc_format\": \"12,50 €\",\n                                \"subtotal_format\": \"41,87 €\",\n                                \"YN_format\": \"0,00 €\",\n                                \"IVA_format\": \"0,00 €\",\n                                \"FT_format\": \"0,48 €\",\n                                \"Q_format\": \"0,00 €\",\n                                \"YR_format\": \"25,23 €\",\n                                \"ft_total_format\": \"0,48 €\",\n                                \"impuestos_format\": \"25,71 €\",\n                                \"costo_tc_format\": \"0,00 €\",\n                                \"costo_islr_format\": \"0,00 €\",\n                                \"costo_idb_format\": \"0,00 €\",\n                                \"costo_igtf_format\": \"0,00 €\",\n                                \"gastos_tc_format\": \"0,00 €\",\n                                \"fee_format\": \"1,32 €\",\n                                \"descuento_trans_format\": \"0,00 €\",\n                                \"com_avt_format\": \"0,00 €\",\n                                \"comision_avt_format\": \"0,00 €\",\n                                \"over_comision_avt_format\": \"0,00 €\",\n                                \"FEE_format\": \"0,00 €\",\n                                \"fee_tot_format\": \"1,32 €\",\n                                \"ft_format\": \"0,01 €\",\n                                \"prepago_format\": \"0,00 €\",\n                                \"pvp_iva_format\": \"0,00 €\",\n                                \"cash_tot_format\": \"67,58 €\",\n                                \"total_format\": \"67,58 €\",\n                                \"total_full_format\": \"68,89 €\"\n                            }\n                        }\n                    }\n                ],\n                \"pax\": {\n                    \"nombre_adl_1\": \"JUAN\",\n                    \"ptc_adl_1\": \"ADT\",\n                    \"apellido_adl_1\": \"RODRIGUEZ\",\n                    \"nacionalidad_adl_1\": \"V\",\n                    \"pasaporte_adl_1\": \"12345678\",\n                    \"documento_adl_1\": \"12345678\",\n                    \"titulo_adl_1\": \"MR\",\n                    \"correo_adl_1\": \"A@A.COM\",\n                    \"telefono_adl_1\": \"04121234567\",\n                    \"pais_adl_1\": \"Venezuela\",\n                    \"estado_adl_1\": \"Nueva Esparta\",\n                    \"ciudad_adl_1\": \"PORLAMAR\",\n                    \"direccion_adl_1\": \"PORLAMAR\",\n                    \"codigopostal_adl_1\": 6301,\n                    \"domicilio_adl_1\": \"PORLAMAR, PORLAMAR. Nueva Esparta, Venezuela\",\n                    \"localizador_adl_1\": \"ETKTLB\",\n                    \"tsa_nacimiento_adl_1\": \"\",\n                    \"tsa_paisnacimiento_adl_1\": \"VE\",\n                    \"tsa_genero_adl_1\": \"M\",\n                    \"tsa_vencimientodoc_adl_1\": \"\",\n                    \"tsa_paisdoc_adl_1\": \"VE\",\n                    \"tsa_tipodoc_adl_1\": \"P\",\n                    \"tsa_doc_adl_1\": 0\n                },\n                \"quote\": {\n                    \"departureFlight\": {\n                        \"order\": 0,\n                        \"isDirect\": true,\n                        \"currency\": \"USD\",\n                        \"currency_id\": 2,\n                        \"segmentsSize\": 1,\n                        \"segments\": [\n                            {\n                                \"id\": \"5R_303_120000\",\n                                \"departureCode\": \"PMV\",\n                                \"arrivalCode\": \"CCS\",\n                                \"flightNumber\": \"303\",\n                                \"journeyDuration\": \"00:40:00\",\n                                \"departureDateTime\": \"2026-01-20 12:00:00\",\n                                \"arrivalDateTime\": \"2026-01-20 12:40:00\",\n                                \"departureDate\": \"2026-01-20\",\n                                \"arrivalDate\": \"2026-01-20\",\n                                \"departureTime\": \"12:00:00\",\n                                \"arrivalTime\": \"12:40:00\",\n                                \"stopQuantity\": \"0\",\n                                \"airEquipType\": \"733\",\n                                \"airlineCode\": \"5R\",\n                                \"mealCode\": \"N\",\n                                \"meal\": \"(N)\",\n                                \"busy\": 0,\n                                \"class\": \"T\",\n                                \"classes\": {\n                                    \"C\": \"9\",\n                                    \"D\": \"9\",\n                                    \"T\": \"9\",\n                                    \"L\": \"9\",\n                                    \"Z\": \"9\"\n                                },\n                                \"marketingCabins\": {\n                                    \"C\": \"2\",\n                                    \"D\": \"2\",\n                                    \"T\": \"1\",\n                                    \"L\": \"1\",\n                                    \"Z\": \"1\"\n                                },\n                                \"cabins\": {\n                                    \"1\": \"Economy\",\n                                    \"2\": \"Other\"\n                                },\n                                \"price\": null,\n                                \"rates\": [],\n                                \"airlineName\": \"Rutaca\"\n                            }\n                        ],\n                        \"departure\": \"PMV\",\n                        \"destination\": \"CCS\",\n                        \"price\": 0,\n                        \"rates\": [],\n                        \"com\": 0,\n                        \"api\": \"kiu\",\n                        \"alt\": 4,\n                        \"airlines\": [\n                            \"5R\"\n                        ],\n                        \"international\": 0,\n                        \"busy\": 0,\n                        \"id\": \"0\",\n                        \"selected\": true\n                    },\n                    \"returnFlight\": null,\n                    \"passengers\": [\n                        {\n                            \"name\": \"JUAN\",\n                            \"lastName\": \"RODRIGUEZ\",\n                            \"nationality\": \"V\",\n                            \"idNumber\": \"12345678\",\n                            \"documentType\": \"CI\",\n                            \"type\": \"ADT\",\n                            \"phoneCode\": \"58\",\n                            \"phone\": \"04121234567\",\n                            \"email\": \"A@A.COM\",\n                            \"birthDate\": \"\",\n                            \"tsa\": {\n                                \"birthDate\": \"\",\n                                \"gender\": \"M\",\n                                \"docIssueCountry\": \"VE\",\n                                \"birthCountry\": \"VE\",\n                                \"tsaDocType\": \"P\",\n                                \"tsaDocID\": 0\n                            },\n                            \"address\": {\n                                \"address\": \"PORLAMAR\",\n                                \"city\": \"PORLAMAR\",\n                                \"zipCode\": 6301,\n                                \"state\": \"Nueva Esparta\",\n                                \"country\": \"Venezuela\"\n                            },\n                            \"departureOccupation\": [],\n                            \"returnOccupation\": [],\n                            \"departureClases\": [\n                                \"T\"\n                            ],\n                            \"returnClases\": [],\n                            \"namePrefix\": \"MR\"\n                        }\n                    ],\n                    \"observations\": \"\",\n                    \"occupation\": [\n                        {\n                            \"type\": \"ADT\",\n                            \"segments\": {\n                                \"5R_303_120000\": \"T\"\n                            }\n                        }\n                    ],\n                    \"client_id\": 1326,\n                    \"usa_ve\": false,\n                    \"ticketTimeLimit\": 24,\n                    \"groups\": {\n                        \"occupation\": [\n                            {\n                                \"5R_303_120000\": \"T\"\n                            }\n                        ],\n                        \"passengers\": [\n                            \"ADT\"\n                        ],\n                        \"arrLocs\": [\n                            [\n                                0\n                            ]\n                        ]\n                    }\n                }\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Vuelos. Consultar Estado por viaje_id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es-US,es-419;q=0.9,es;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:4200"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/v1/purchases/716702/flight/status",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"purchases",
+						"716702",
+						"flight",
+						"status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Vuelos. Consultar Estado por viaje_id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "es-US,es-419;q=0.9,es;q=0.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:4200"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Referer",
+								"value": "http://localhost:4200/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/v1/purchases/716702/flight/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"purchases",
+								"716702",
+								"flight",
+								"status"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"localizadores\": [\n        {\n            \"gds\": \"kiu\",\n            \"localizador\": \"ETKTLB\",\n            \"partida\": \"PMV\",\n            \"destino\": \"CCS\",\n            \"pasajeros\": [\n                {\n                    \"indice\": \"1\",\n                    \"tipo\": \"ADT\",\n                    \"nombre\": \"JUAN MR\",\n                    \"apellido\": \"RODRIGUEZ\",\n                    \"tipodocumento\": \"ID\",\n                    \"documento\": \"VCI12345678\",\n                    \"telefono\": \"MIA 5804121234567\",\n                    \"email\": \"A@A.COM\"\n                }\n            ],\n            \"paxs\": {\n                \"1\": 1\n            },\n            \"paxsIndex\": {\n                \"1\": \"adl\",\n                \"2\": \"ted\",\n                \"3\": \"chd\",\n                \"4\": \"inf\"\n            },\n            \"vuelos\": [\n                {\n                    \"directo\": true,\n                    \"origen\": \"PMV\",\n                    \"destino\": \"CCS\",\n                    \"segmentos\": [\n                        {\n                            \"indice\": \"1\",\n                            \"partida\": \"PMV\",\n                            \"destino\": \"CCS\",\n                            \"vuelo\": \"303\",\n                            \"salida\": \"2026-01-20T12:00:00\",\n                            \"llegada\": \"2026-01-20T12:40:00\",\n                            \"diasalida\": \"2026-01-20\",\n                            \"diallegada\": \"2026-01-20\",\n                            \"horasalida\": \"12:00:00\",\n                            \"horallegada\": \"12:40:00\",\n                            \"aerolinea\": \"5R\",\n                            \"st_aerolinea\": \"Rutaca\",\n                            \"clase\": \"T\",\n                            \"estado\": \"HK - Confirmado\",\n                            \"ida\": 1\n                        }\n                    ],\n                    \"ruta\": \"PMV-CCS\",\n                    \"desglose\": [\n                        {\n                            \"type\": \"ADT\",\n                            \"quantity\": \"1\",\n                            \"rates\": {\n                                \"base\": 47.73,\n                                \"6I\": 1.43,\n                                \"6N\": 9.55,\n                                \"AK\": 13,\n                                \"C2\": 1.25,\n                                \"EU\": 0.48\n                            },\n                            \"tipo\": \"ADT\",\n                            \"cantidad\": \"1\",\n                            \"tasas\": {\n                                \"base\": 47.73,\n                                \"6I\": 1.43,\n                                \"6N\": 9.55,\n                                \"AK\": 13,\n                                \"C2\": 1.25,\n                                \"EU\": 0.48\n                            }\n                        }\n                    ],\n                    \"tasas\": {\n                        \"base\": 47.73,\n                        \"6I\": 1.43,\n                        \"6N\": 9.55,\n                        \"AK\": 13,\n                        \"C2\": 1.25,\n                        \"EU\": 0.48\n                    },\n                    \"precio\": 73.44,\n                    \"base\": 47.73,\n                    \"alt\": 4\n                }\n            ],\n            \"precio\": \"73.44\",\n            \"base\": \"47.73\",\n            \"tasas\": {\n                \"base\": \"47.73\",\n                \"6I\": \"1.43\",\n                \"6N\": \"9.55\",\n                \"AK\": \"13\",\n                \"C2\": \"1.25\",\n                \"EU\": \"0.48\"\n            },\n            \"estado\": \"1\",\n            \"vencimiento\": \"2025-12-02T14:16:00\",\n            \"ssr\": [],\n            \"comentarios\": [\n                \"RESERVA PROCESADA UTILIZANDO LA PLATAFORMA CERVO BY LYL TOURS P-716703\"\n            ],\n            \"ruta\": \"PMV-CCS\",\n            \"directo\": 1,\n            \"tickets\": []\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Vuelos. Consultar Estado por PNR",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es-US,es-419;q=0.9,es;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:4200"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/v1/kiu/flight/status/SFVZVC?alt=4",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"kiu",
+						"flight",
+						"status",
+						"SFVZVC"
+					],
+					"query": [
+						{
+							"key": "alt",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Vuelos. Consultar Estado por viaje_id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "es-US,es-419;q=0.9,es;q=0.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:4200"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Referer",
+								"value": "http://localhost:4200/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"url": {
+							"raw": ""
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"localizador\": [\n        {\n            \"gds\": \"kiu\",\n            \"localizador\": \"OYHGMM\",\n            \"partida\": \"PMV\",\n            \"destino\": \"CCS\",\n            \"pasajeros\": [\n                {\n                    \"indice\": \"1\",\n                    \"tipo\": \"ADT\",\n                    \"nombre\": \"JOSE MR\",\n                    \"apellido\": \"\",\n                    \"tipodocumento\": \"ID\",\n                    \"documento\": \"VCI12345678\",\n                    \"telefono\": \"MIA 5804121234567\",\n                    \"email\": \"A@A.COM\"\n                }\n            ],\n            \"paxs\": {\n                \"1\": 1\n            },\n            \"paxsIndex\": {\n                \"1\": \"adl\",\n                \"2\": \"ted\",\n                \"3\": \"chd\",\n                \"4\": \"inf\"\n            },\n            \"vuelos\": [\n                {\n                    \"directo\": true,\n                    \"origen\": \"PMV\",\n                    \"destino\": \"CCS\",\n                    \"segmentos\": [\n                        {\n                            \"indice\": \"1\",\n                            \"partida\": \"PMV\",\n                            \"destino\": \"CCS\",\n                            \"vuelo\": \"8314\",\n                            \"salida\": \"2026-01-07T07:00:00\",\n                            \"llegada\": \"2026-01-07T08:00:00\",\n                            \"diasalida\": \"2026-01-07\",\n                            \"diallegada\": \"2026-01-07\",\n                            \"horasalida\": \"07:00:00\",\n                            \"horallegada\": \"08:00:00\",\n                            \"aerolinea\": \"ES\",\n                            \"st_aerolinea\": \"Estelar Airlines\",\n                            \"clase\": \"G\",\n                            \"estado\": \"HL - En lista de espera\",\n                            \"ida\": 1\n                        }\n                    ],\n                    \"ruta\": \"PMV-CCS\",\n                    \"desglose\": [\n                        {\n                            \"type\": \"ADT\",\n                            \"quantity\": \"1\",\n                            \"rates\": {\n                                \"base\": 39.19,\n                                \"6A\": 1.18,\n                                \"6B\": 40,\n                                \"AK\": 13,\n                                \"C2\": 1.25,\n                                \"EU\": 0.39\n                            },\n                            \"tipo\": \"ADT\",\n                            \"cantidad\": \"1\",\n                            \"tasas\": {\n                                \"base\": 39.19,\n                                \"6A\": 1.18,\n                                \"6B\": 40,\n                                \"AK\": 13,\n                                \"C2\": 1.25,\n                                \"EU\": 0.39\n                            }\n                        }\n                    ],\n                    \"tasas\": {\n                        \"base\": 39.19,\n                        \"6A\": 1.18,\n                        \"6B\": 40,\n                        \"AK\": 13,\n                        \"C2\": 1.25,\n                        \"EU\": 0.39\n                    },\n                    \"precio\": 95.01,\n                    \"base\": 39.19,\n                    \"alt\": 4\n                }\n            ],\n            \"precio\": \"95.01\",\n            \"base\": \"39.19\",\n            \"tasas\": {\n                \"base\": \"39.19\",\n                \"6A\": \"1.18\",\n                \"6B\": \"40\",\n                \"AK\": \"13\",\n                \"C2\": \"1.25\",\n                \"EU\": \"0.39\"\n            },\n            \"estado\": \"1\",\n            \"vencimiento\": \"2025-12-05T15:53:00\",\n            \"ssr\": [],\n            \"comentarios\": [\n                \"RESERVA PROCESADA UTILIZANDO LA PLATAFORMA CERVO BY LYL TOURS P-816693\"\n            ],\n            \"ruta\": \"PMV-CCS\",\n            \"directo\": 1,\n            \"tickets\": []\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Vuelos. Cotizar paxs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es-US,es-419;q=0.9,es;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:4200"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"departureFlight\": {\n        \"order\": 0,\n        \"isDirect\": true,\n        \"currency\": \"USD\",\n        \"currency_id\": 2,\n        \"segmentsSize\": 1,\n        \"segments\": [\n            {\n                \"id\": \"ES_8314_070000\",\n                \"departureCode\": \"PMV\",\n                \"arrivalCode\": \"CCS\",\n                \"flightNumber\": \"8314\",\n                \"journeyDuration\": \"01:00:00\",\n                \"departureDateTime\": \"2026-01-07 07:00:00\",\n                \"arrivalDateTime\": \"2026-01-07 08:00:00\",\n                \"departureDate\": \"2026-01-07\",\n                \"arrivalDate\": \"2026-01-07\",\n                \"departureTime\": \"07:00:00\",\n                \"arrivalTime\": \"08:00:00\",\n                \"stopQuantity\": \"0\",\n                \"airEquipType\": \"733\",\n                \"airlineCode\": \"ES\",\n                \"mealCode\": \"S\",\n                \"meal\": \"Merienda (S)\",\n                \"busy\": 0,\n                \"class\": \"G\",\n                \"classes\": {\n                    \"G\": \"9\"\n                },\n                \"marketingCabins\": {\n                    \"G\": \"1\"\n                },\n                \"cabins\": {\n                    \"1\": \"Economy\"\n                },\n                \"price\": 95.01,\n                \"rates\": {\n                    \"base\": 39.19,\n                    \"6A\": 1.18,\n                    \"6B\": 40,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.39\n                },\n                \"airlineName\": \"Estelar Airlines\",\n                \"uid\": \"ab715f7e95cc31bff6badf6dc8140bb30bf8855a\",\n                \"base\": 39.19,\n                \"breakdown\": [\n                    {\n                        \"type\": \"ADT\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 39.19,\n                            \"6A\": 1.18,\n                            \"6B\": 40,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.39\n                        }\n                    }\n                ],\n                \"baggage\": []\n            }\n        ],\n        \"departure\": \"PMV\",\n        \"destination\": \"CCS\",\n        \"price\": 0,\n        \"rates\": {\n            \"base\": 39.19,\n            \"6A\": 1.18,\n            \"6B\": 40,\n            \"AK\": 13,\n            \"C2\": 1.25,\n            \"EU\": 0.39\n        },\n        \"com\": 0,\n        \"api\": \"kiu\",\n        \"alt\": 4,\n        \"airlines\": [\n            \"ES\"\n        ],\n        \"international\": 0,\n        \"busy\": 0,\n        \"id\": \"0\",\n        \"base\": 39.19,\n        \"breakdown\": [\n            {\n                \"type\": \"ADT\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 39.19,\n                    \"6A\": 1.18,\n                    \"6B\": 40,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.39\n                }\n            }\n        ],\n        \"baggage\": [],\n        \"selected\": true\n    },\n    \"returnFlight\": null,\n    \"occupation\": [\n        {\n            \"type\": \"ADT\",\n            \"segments\": {\n                \"ES_8314_070000\": \"G\"\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/kiu/flight-offers/pricing",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"kiu",
+						"flight-offers",
+						"pricing"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Vuelos. Cotizar paxs OW",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "[\n    {\n        \"price\": 95.01,\n        \"base\": 39.19,\n        \"rates\": {\n            \"base\": 39.19,\n            \"6A\": 1.18,\n            \"6B\": 40,\n            \"AK\": 13,\n            \"C2\": 1.25,\n            \"EU\": 0.39\n        },\n        \"breakdown\": [\n            {\n                \"type\": \"ADT\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 39.19,\n                    \"6A\": 1.18,\n                    \"6B\": 40,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.39\n                }\n            }\n        ],\n        \"baggage\": [],\n        \"segments\": [\n            {\n                \"price\": 95.01,\n                \"base\": 39.19,\n                \"rates\": {\n                    \"base\": 39.19,\n                    \"6A\": 1.18,\n                    \"6B\": 40,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.39\n                },\n                \"breakdown\": [\n                    {\n                        \"type\": \"ADT\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 39.19,\n                            \"6A\": 1.18,\n                            \"6B\": 40,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.39\n                        }\n                    }\n                ],\n                \"baggage\": []\n            }\n        ],\n        \"vuelos\": [\n            \"ES8314 PMV/ CCS - Clase: G 2026-01-07 07:00:00\"\n        ],\n        \"passengers\": [\n            0\n        ],\n        \"status\": [\n            \"En espera de reserva\"\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Vuelos. Cotizar Paxs RT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es-US,es-419;q=0.9,es;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:4200"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"departureFlight\": {\n        \"order\": 1,\n        \"isDirect\": true,\n        \"currency\": \"USD\",\n        \"currency_id\": 2,\n        \"segmentsSize\": 1,\n        \"segments\": [\n            {\n                \"id\": \"5R_303_120000\",\n                \"departureCode\": \"PMV\",\n                \"arrivalCode\": \"CCS\",\n                \"flightNumber\": \"303\",\n                \"journeyDuration\": \"00:40:00\",\n                \"departureDateTime\": \"2026-01-07 12:00:00\",\n                \"arrivalDateTime\": \"2026-01-07 12:40:00\",\n                \"departureDate\": \"2026-01-07\",\n                \"arrivalDate\": \"2026-01-07\",\n                \"departureTime\": \"12:00:00\",\n                \"arrivalTime\": \"12:40:00\",\n                \"stopQuantity\": \"0\",\n                \"airEquipType\": \"737\",\n                \"airlineCode\": \"5R\",\n                \"mealCode\": \"B\",\n                \"meal\": \"Desayuno (B)\",\n                \"busy\": 0,\n                \"class\": \"T\",\n                \"classes\": {\n                    \"H\": \"9\",\n                    \"T\": \"9\"\n                },\n                \"marketingCabins\": {\n                    \"H\": \"1\",\n                    \"T\": \"1\"\n                },\n                \"cabins\": {\n                    \"1\": \"Economy\"\n                },\n                \"price\": 78.44,\n                \"rates\": {\n                    \"base\": 47.73,\n                    \"6I\": 1.43,\n                    \"6N\": 9.55,\n                    \"6S\": 5,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.48\n                },\n                \"airlineName\": \"Rutaca\",\n                \"uid\": \"68ede2daa2eb1f082c0428996c8f0c645f48bbf6\",\n                \"base\": 47.73,\n                \"breakdown\": [\n                    {\n                        \"type\": \"ADT\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 47.73,\n                            \"6I\": 1.43,\n                            \"6N\": 9.55,\n                            \"6S\": 5,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.48\n                        }\n                    }\n                ],\n                \"baggage\": []\n            }\n        ],\n        \"departure\": \"PMV\",\n        \"destination\": \"CCS\",\n        \"price\": 0,\n        \"rates\": {\n            \"base\": 47.73,\n            \"6I\": 1.43,\n            \"6N\": 9.55,\n            \"6S\": 5,\n            \"AK\": 13,\n            \"C2\": 1.25,\n            \"EU\": 0.48\n        },\n        \"com\": 0,\n        \"api\": \"kiu\",\n        \"alt\": 4,\n        \"airlines\": [\n            \"5R\"\n        ],\n        \"international\": 0,\n        \"busy\": 0,\n        \"id\": \"0\",\n        \"base\": 47.73,\n        \"breakdown\": [\n            {\n                \"type\": \"ADT\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 47.73,\n                    \"6I\": 1.43,\n                    \"6N\": 9.55,\n                    \"6S\": 5,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.48\n                }\n            }\n        ],\n        \"baggage\": [],\n        \"selected\": true\n    },\n    \"returnFlight\": {\n        \"order\": 0,\n        \"isDirect\": true,\n        \"currency\": \"USD\",\n        \"currency_id\": 2,\n        \"segmentsSize\": 1,\n        \"segments\": [\n            {\n                \"id\": \"QL_1902_080000\",\n                \"departureCode\": \"CCS\",\n                \"arrivalCode\": \"PMV\",\n                \"flightNumber\": \"1902\",\n                \"journeyDuration\": \"00:50:00\",\n                \"departureDateTime\": \"2025-12-17 08:00:00\",\n                \"arrivalDateTime\": \"2025-12-17 08:50:00\",\n                \"departureDate\": \"2025-12-17\",\n                \"arrivalDate\": \"2025-12-17\",\n                \"departureTime\": \"08:00:00\",\n                \"arrivalTime\": \"08:50:00\",\n                \"stopQuantity\": \"0\",\n                \"airEquipType\": \"M80\",\n                \"airlineCode\": \"QL\",\n                \"mealCode\": \"-\",\n                \"meal\": \"Sin servicio de comida (-)\",\n                \"busy\": 0,\n                \"class\": \"Q\",\n                \"classes\": {\n                    \"R\": \"9\",\n                    \"Q\": \"9\"\n                },\n                \"marketingCabins\": {\n                    \"R\": \"1\",\n                    \"Q\": \"1\"\n                },\n                \"cabins\": {\n                    \"1\": \"Economy\",\n                    \"2\": \"Bussiness\"\n                },\n                \"price\": 136.25,\n                \"rates\": {\n                    \"base\": 100,\n                    \"6I\": 3,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 1,\n                    \"YN\": 8\n                },\n                \"airlineName\": \"Laser Airlines\",\n                \"uid\": \"78dd58366284dad9371da35e6d2afe9a07d3e4de\",\n                \"base\": 100,\n                \"breakdown\": [\n                    {\n                        \"type\": \"ADT\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 100,\n                            \"6I\": 3,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 1,\n                            \"YN\": 8\n                        }\n                    }\n                ],\n                \"baggage\": []\n            }\n        ],\n        \"departure\": \"PMV\",\n        \"destination\": \"CCS\",\n        \"price\": 136.25,\n        \"rates\": {\n            \"base\": 100,\n            \"6I\": 3,\n            \"AK\": 13,\n            \"C2\": 1.25,\n            \"EU\": 1,\n            \"YN\": 8\n        },\n        \"com\": 0,\n        \"api\": \"kiu\",\n        \"alt\": 4,\n        \"airlines\": [\n            \"QL\"\n        ],\n        \"international\": 0,\n        \"busy\": 0,\n        \"id\": \"0\",\n        \"base\": 100,\n        \"breakdown\": [\n            {\n                \"type\": \"ADT\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 100,\n                    \"6I\": 3,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 1,\n                    \"YN\": 8\n                }\n            }\n        ],\n        \"baggage\": [],\n        \"selected\": true\n    },\n    \"occupation\": [\n        {\n            \"type\": \"ADT\",\n            \"segments\": {\n                \"5R_303_120000\": \"T\",\n                \"QL_1902_080000\": \"Q\"\n            }\n        },\n        {\n            \"type\": \"INF\",\n            \"segments\": {\n                \"5R_303_120000\": \"T\",\n                \"QL_1902_080000\": \"Q\"\n            }\n        },\n        {\n            \"type\": \"CHD\",\n            \"segments\": {\n                \"5R_303_120000\": \"T\",\n                \"QL_1902_080000\": \"Q\"\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/kiu/flight-offers/pricing",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"kiu",
+						"flight-offers",
+						"pricing"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Vuelos. Cotizar Paxs RT RS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "es-US,es-419;q=0.9,es;q=0.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:4200"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Referer",
+								"value": "http://localhost:4200/"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departureFlight\": {\n        \"order\": 1,\n        \"isDirect\": true,\n        \"currency\": \"USD\",\n        \"currency_id\": 2,\n        \"segmentsSize\": 1,\n        \"segments\": [\n            {\n                \"id\": \"5R_303_120000\",\n                \"departureCode\": \"PMV\",\n                \"arrivalCode\": \"CCS\",\n                \"flightNumber\": \"303\",\n                \"journeyDuration\": \"00:40:00\",\n                \"departureDateTime\": \"2026-01-07 12:00:00\",\n                \"arrivalDateTime\": \"2026-01-07 12:40:00\",\n                \"departureDate\": \"2026-01-07\",\n                \"arrivalDate\": \"2026-01-07\",\n                \"departureTime\": \"12:00:00\",\n                \"arrivalTime\": \"12:40:00\",\n                \"stopQuantity\": \"0\",\n                \"airEquipType\": \"737\",\n                \"airlineCode\": \"5R\",\n                \"mealCode\": \"B\",\n                \"meal\": \"Desayuno (B)\",\n                \"busy\": 0,\n                \"class\": \"T\",\n                \"classes\": {\n                    \"H\": \"9\",\n                    \"T\": \"9\"\n                },\n                \"marketingCabins\": {\n                    \"H\": \"1\",\n                    \"T\": \"1\"\n                },\n                \"cabins\": {\n                    \"1\": \"Economy\"\n                },\n                \"price\": 78.44,\n                \"rates\": {\n                    \"base\": 47.73,\n                    \"6I\": 1.43,\n                    \"6N\": 9.55,\n                    \"6S\": 5,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.48\n                },\n                \"airlineName\": \"Rutaca\",\n                \"uid\": \"68ede2daa2eb1f082c0428996c8f0c645f48bbf6\",\n                \"base\": 47.73,\n                \"breakdown\": [\n                    {\n                        \"type\": \"ADT\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 47.73,\n                            \"6I\": 1.43,\n                            \"6N\": 9.55,\n                            \"6S\": 5,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.48\n                        }\n                    }\n                ],\n                \"baggage\": []\n            }\n        ],\n        \"departure\": \"PMV\",\n        \"destination\": \"CCS\",\n        \"price\": 0,\n        \"rates\": {\n            \"base\": 47.73,\n            \"6I\": 1.43,\n            \"6N\": 9.55,\n            \"6S\": 5,\n            \"AK\": 13,\n            \"C2\": 1.25,\n            \"EU\": 0.48\n        },\n        \"com\": 0,\n        \"api\": \"kiu\",\n        \"alt\": 4,\n        \"airlines\": [\n            \"5R\"\n        ],\n        \"international\": 0,\n        \"busy\": 0,\n        \"id\": \"0\",\n        \"base\": 47.73,\n        \"breakdown\": [\n            {\n                \"type\": \"ADT\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 47.73,\n                    \"6I\": 1.43,\n                    \"6N\": 9.55,\n                    \"6S\": 5,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.48\n                }\n            }\n        ],\n        \"baggage\": [],\n        \"selected\": true\n    },\n    \"returnFlight\": {\n        \"order\": 0,\n        \"isDirect\": true,\n        \"currency\": \"USD\",\n        \"currency_id\": 2,\n        \"segmentsSize\": 1,\n        \"segments\": [\n            {\n                \"id\": \"QL_1902_080000\",\n                \"departureCode\": \"CCS\",\n                \"arrivalCode\": \"PMV\",\n                \"flightNumber\": \"1902\",\n                \"journeyDuration\": \"00:50:00\",\n                \"departureDateTime\": \"2025-12-17 08:00:00\",\n                \"arrivalDateTime\": \"2025-12-17 08:50:00\",\n                \"departureDate\": \"2025-12-17\",\n                \"arrivalDate\": \"2025-12-17\",\n                \"departureTime\": \"08:00:00\",\n                \"arrivalTime\": \"08:50:00\",\n                \"stopQuantity\": \"0\",\n                \"airEquipType\": \"M80\",\n                \"airlineCode\": \"QL\",\n                \"mealCode\": \"-\",\n                \"meal\": \"Sin servicio de comida (-)\",\n                \"busy\": 0,\n                \"class\": \"Q\",\n                \"classes\": {\n                    \"R\": \"9\",\n                    \"Q\": \"9\"\n                },\n                \"marketingCabins\": {\n                    \"R\": \"1\",\n                    \"Q\": \"1\"\n                },\n                \"cabins\": {\n                    \"1\": \"Economy\",\n                    \"2\": \"Bussiness\"\n                },\n                \"price\": 136.25,\n                \"rates\": {\n                    \"base\": 100,\n                    \"6I\": 3,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 1,\n                    \"YN\": 8\n                },\n                \"airlineName\": \"Laser Airlines\",\n                \"uid\": \"78dd58366284dad9371da35e6d2afe9a07d3e4de\",\n                \"base\": 100,\n                \"breakdown\": [\n                    {\n                        \"type\": \"ADT\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 100,\n                            \"6I\": 3,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 1,\n                            \"YN\": 8\n                        }\n                    }\n                ],\n                \"baggage\": []\n            }\n        ],\n        \"departure\": \"PMV\",\n        \"destination\": \"CCS\",\n        \"price\": 136.25,\n        \"rates\": {\n            \"base\": 100,\n            \"6I\": 3,\n            \"AK\": 13,\n            \"C2\": 1.25,\n            \"EU\": 1,\n            \"YN\": 8\n        },\n        \"com\": 0,\n        \"api\": \"kiu\",\n        \"alt\": 4,\n        \"airlines\": [\n            \"QL\"\n        ],\n        \"international\": 0,\n        \"busy\": 0,\n        \"id\": \"0\",\n        \"base\": 100,\n        \"breakdown\": [\n            {\n                \"type\": \"ADT\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 100,\n                    \"6I\": 3,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 1,\n                    \"YN\": 8\n                }\n            }\n        ],\n        \"baggage\": [],\n        \"selected\": true\n    },\n    \"occupation\": [\n        {\n            \"type\": \"ADT\",\n            \"segments\": {\n                \"5R_303_120000\": \"T\",\n                \"QL_1902_080000\": \"Q\"\n            }\n        },\n        {\n            \"type\": \"INF\",\n            \"segments\": {\n                \"5R_303_120000\": \"T\",\n                \"QL_1902_080000\": \"Q\"\n            }\n        },\n        {\n            \"type\": \"CHD\",\n            \"segments\": {\n                \"5R_303_120000\": \"T\",\n                \"QL_1902_080000\": \"Q\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/kiu/flight-offers/pricing",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"kiu",
+								"flight-offers",
+								"pricing"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "[\n    {\n        \"price\": 156.88,\n        \"base\": 95.46,\n        \"rates\": {\n            \"base\": 95.46,\n            \"6I\": 2.86,\n            \"6N\": 19.1,\n            \"6S\": 10,\n            \"AK\": 26,\n            \"C2\": 2.5,\n            \"EU\": 0.96\n        },\n        \"breakdown\": [\n            {\n                \"type\": \"ADT\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 47.73,\n                    \"6I\": 1.43,\n                    \"6N\": 9.55,\n                    \"6S\": 5,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.48\n                }\n            },\n            {\n                \"type\": \"CNN\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 47.73,\n                    \"6I\": 1.43,\n                    \"6N\": 9.55,\n                    \"6S\": 5,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.48\n                }\n            },\n            {\n                \"type\": \"INF\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 0\n                }\n            }\n        ],\n        \"baggage\": [],\n        \"segments\": [\n            {\n                \"price\": 156.88,\n                \"base\": 95.46,\n                \"rates\": {\n                    \"base\": 95.46,\n                    \"6I\": 2.86,\n                    \"6N\": 19.1,\n                    \"6S\": 10,\n                    \"AK\": 26,\n                    \"C2\": 2.5,\n                    \"EU\": 0.96\n                },\n                \"breakdown\": [\n                    {\n                        \"type\": \"ADT\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 47.73,\n                            \"6I\": 1.43,\n                            \"6N\": 9.55,\n                            \"6S\": 5,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.48\n                        }\n                    },\n                    {\n                        \"type\": \"CNN\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 47.73,\n                            \"6I\": 1.43,\n                            \"6N\": 9.55,\n                            \"6S\": 5,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.48\n                        }\n                    },\n                    {\n                        \"type\": \"INF\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 0\n                        }\n                    }\n                ],\n                \"baggage\": []\n            }\n        ],\n        \"vuelos\": [\n            \"5R303 PMV/ CCS - Clase: T 2026-01-07 12:00:00\"\n        ],\n        \"passengers\": [\n            0,\n            1,\n            2\n        ],\n        \"status\": [\n            \"En espera de reserva\"\n        ]\n    },\n    {\n        \"price\": 216.5,\n        \"base\": 150,\n        \"rates\": {\n            \"base\": 150,\n            \"6I\": 4.5,\n            \"AK\": 26,\n            \"C2\": 2.5,\n            \"EU\": 1.5,\n            \"YN\": 12\n        },\n        \"breakdown\": [\n            {\n                \"type\": \"ADT\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 100,\n                    \"6I\": 3,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 1,\n                    \"YN\": 8\n                }\n            },\n            {\n                \"type\": \"CNN\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 50,\n                    \"6I\": 1.5,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.5,\n                    \"YN\": 4\n                }\n            },\n            {\n                \"type\": \"INF\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 0\n                }\n            }\n        ],\n        \"baggage\": [],\n        \"segments\": [\n            {\n                \"price\": 216.5,\n                \"base\": 150,\n                \"rates\": {\n                    \"base\": 150,\n                    \"6I\": 4.5,\n                    \"AK\": 26,\n                    \"C2\": 2.5,\n                    \"EU\": 1.5,\n                    \"YN\": 12\n                },\n                \"breakdown\": [\n                    {\n                        \"type\": \"ADT\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 100,\n                            \"6I\": 3,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 1,\n                            \"YN\": 8\n                        }\n                    },\n                    {\n                        \"type\": \"CNN\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 50,\n                            \"6I\": 1.5,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.5,\n                            \"YN\": 4\n                        }\n                    },\n                    {\n                        \"type\": \"INF\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 0\n                        }\n                    }\n                ],\n                \"baggage\": []\n            }\n        ],\n        \"vuelos\": [\n            \"QL1902 CCS/ PMV - Clase: Q 2025-12-17 08:00:00\"\n        ],\n        \"passengers\": [\n            0,\n            1,\n            2\n        ],\n        \"status\": [\n            \"En espera de reserva\"\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Vuelos. Reservar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"departureFlight\": {\n        \"order\": 0,\n        \"isDirect\": true,\n        \"currency\": \"USD\",\n        \"currency_id\": 2,\n        \"segmentsSize\": 1,\n        \"segments\": [\n            {\n                \"id\": \"ES_8314_070000\",\n                \"departureCode\": \"PMV\",\n                \"arrivalCode\": \"CCS\",\n                \"flightNumber\": \"8314\",\n                \"journeyDuration\": \"01:00:00\",\n                \"departureDateTime\": \"2026-01-07 07:00:00\",\n                \"arrivalDateTime\": \"2026-01-07 08:00:00\",\n                \"departureDate\": \"2026-01-07\",\n                \"arrivalDate\": \"2026-01-07\",\n                \"departureTime\": \"07:00:00\",\n                \"arrivalTime\": \"08:00:00\",\n                \"stopQuantity\": \"0\",\n                \"airEquipType\": \"733\",\n                \"airlineCode\": \"ES\",\n                \"mealCode\": \"S\",\n                \"meal\": \"Merienda (S)\",\n                \"busy\": 0,\n                \"class\": \"G\",\n                \"classes\": {\n                    \"G\": \"9\"\n                },\n                \"marketingCabins\": {\n                    \"G\": \"1\"\n                },\n                \"cabins\": {\n                    \"1\": \"Economy\"\n                },\n                \"price\": 95.01,\n                \"rates\": {\n                    \"base\": 39.19,\n                    \"6A\": 1.18,\n                    \"6B\": 40,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.39\n                },\n                \"airlineName\": \"Estelar Airlines\",\n                \"uid\": \"ab715f7e95cc31bff6badf6dc8140bb30bf8855a\",\n                \"base\": 39.19,\n                \"breakdown\": [\n                    {\n                        \"type\": \"ADT\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 39.19,\n                            \"6A\": 1.18,\n                            \"6B\": 40,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.39\n                        }\n                    }\n                ],\n                \"baggage\": []\n            }\n        ],\n        \"departure\": \"PMV\",\n        \"destination\": \"CCS\",\n        \"price\": 0,\n        \"rates\": {\n            \"base\": 39.19,\n            \"6A\": 1.18,\n            \"6B\": 40,\n            \"AK\": 13,\n            \"C2\": 1.25,\n            \"EU\": 0.39\n        },\n        \"com\": 0,\n        \"api\": \"kiu\",\n        \"alt\": 4,\n        \"airlines\": [\n            \"ES\"\n        ],\n        \"international\": 0,\n        \"busy\": 0,\n        \"id\": \"0\",\n        \"base\": 39.19,\n        \"breakdown\": [\n            {\n                \"type\": \"ADT\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 39.19,\n                    \"6A\": 1.18,\n                    \"6B\": 40,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.39\n                }\n            }\n        ],\n        \"baggage\": [],\n        \"selected\": true\n    },\n    \"returnFlight\": null,\n    \"passengers\": [\n        {\n            \"name\": \"JUAN\",\n            \"lastName\": \"RODRIGUEZ\",\n            \"nationality\": \"V\",\n            \"idNumber\": \"12345678\",\n            \"documentType\": \"CI\",\n            \"type\": \"ADT\",\n            \"phoneCode\": \"58\",\n            \"phone\": \"04121234567\",\n            \"email\": \"a@a.com\",\n            \"birthDate\": \"\",\n            \"tsa\": {\n                \"birthDate\": \"2000-01-01\",\n                \"gender\": \"M\",\n                \"docIssueCountry\": \"VE\",\n                \"birthCountry\": \"VE\",\n                \"tsaDocType\": \"P\",\n                \"tsaDocID\": 0\n            },\n            \"address\": {\n                \"address\": \"porlamar\",\n                \"city\": \"porlamar\",\n                \"zipCode\": 6301,\n                \"state\": \"Nueva Esparta\",\n                \"country\": \"Venezuela\"\n            },\n            \"departureOccupation\": [],\n            \"returnOccupation\": [],\n            \"departureClases\": [\n                \"G\"\n            ],\n            \"returnClases\": [],\n            \"namePrefix\": \"MR\"\n        }\n    ],\n    \"observations\": \"\",\n    \"occupation\": [\n        {\n            \"type\": \"ADT\",\n            \"segments\": {\n                \"ES_8314_070000\": \"G\"\n            }\n        }\n    ],\n    \"ticketTimeLimit\": 24\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/kiu/flight-offers/booking",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"kiu",
+						"flight-offers",
+						"booking"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Vuelos. Reservar RS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+							},
+							{
+								"key": "Referer",
+								"value": "http://localhost:4200/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departureFlight\": {\n        \"order\": 0,\n        \"isDirect\": true,\n        \"currency\": \"USD\",\n        \"currency_id\": 2,\n        \"segmentsSize\": 1,\n        \"segments\": [\n            {\n                \"id\": \"ES_8314_070000\",\n                \"departureCode\": \"PMV\",\n                \"arrivalCode\": \"CCS\",\n                \"flightNumber\": \"8314\",\n                \"journeyDuration\": \"01:00:00\",\n                \"departureDateTime\": \"2026-01-07 07:00:00\",\n                \"arrivalDateTime\": \"2026-01-07 08:00:00\",\n                \"departureDate\": \"2026-01-07\",\n                \"arrivalDate\": \"2026-01-07\",\n                \"departureTime\": \"07:00:00\",\n                \"arrivalTime\": \"08:00:00\",\n                \"stopQuantity\": \"0\",\n                \"airEquipType\": \"733\",\n                \"airlineCode\": \"ES\",\n                \"mealCode\": \"S\",\n                \"meal\": \"Merienda (S)\",\n                \"busy\": 0,\n                \"class\": \"G\",\n                \"classes\": {\n                    \"G\": \"9\"\n                },\n                \"marketingCabins\": {\n                    \"G\": \"1\"\n                },\n                \"cabins\": {\n                    \"1\": \"Economy\"\n                },\n                \"price\": 95.01,\n                \"rates\": {\n                    \"base\": 39.19,\n                    \"6A\": 1.18,\n                    \"6B\": 40,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.39\n                },\n                \"airlineName\": \"Estelar Airlines\",\n                \"uid\": \"ab715f7e95cc31bff6badf6dc8140bb30bf8855a\",\n                \"base\": 39.19,\n                \"breakdown\": [\n                    {\n                        \"type\": \"ADT\",\n                        \"quantity\": \"1\",\n                        \"rates\": {\n                            \"base\": 39.19,\n                            \"6A\": 1.18,\n                            \"6B\": 40,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.39\n                        }\n                    }\n                ],\n                \"baggage\": []\n            }\n        ],\n        \"departure\": \"PMV\",\n        \"destination\": \"CCS\",\n        \"price\": 0,\n        \"rates\": {\n            \"base\": 39.19,\n            \"6A\": 1.18,\n            \"6B\": 40,\n            \"AK\": 13,\n            \"C2\": 1.25,\n            \"EU\": 0.39\n        },\n        \"com\": 0,\n        \"api\": \"kiu\",\n        \"alt\": 4,\n        \"airlines\": [\n            \"ES\"\n        ],\n        \"international\": 0,\n        \"busy\": 0,\n        \"id\": \"0\",\n        \"base\": 39.19,\n        \"breakdown\": [\n            {\n                \"type\": \"ADT\",\n                \"quantity\": \"1\",\n                \"rates\": {\n                    \"base\": 39.19,\n                    \"6A\": 1.18,\n                    \"6B\": 40,\n                    \"AK\": 13,\n                    \"C2\": 1.25,\n                    \"EU\": 0.39\n                }\n            }\n        ],\n        \"baggage\": [],\n        \"selected\": true\n    },\n    \"returnFlight\": null,\n    \"passengers\": [\n        {\n            \"name\": \"JUAN\",\n            \"lastName\": \"RODRIGUEZ\",\n            \"nationality\": \"V\",\n            \"idNumber\": \"12345678\",\n            \"documentType\": \"CI\",\n            \"type\": \"ADT\",\n            \"phoneCode\": \"58\",\n            \"phone\": \"04121234567\",\n            \"email\": \"a@a.com\",\n            \"birthDate\": \"\",\n            \"tsa\": {\n                \"birthDate\": \"2000-01-01\",\n                \"gender\": \"M\",\n                \"docIssueCountry\": \"VE\",\n                \"birthCountry\": \"VE\",\n                \"tsaDocType\": \"P\",\n                \"tsaDocID\": 0\n            },\n            \"address\": {\n                \"address\": \"porlamar\",\n                \"city\": \"porlamar\",\n                \"zipCode\": 6301,\n                \"state\": \"Nueva Esparta\",\n                \"country\": \"Venezuela\"\n            },\n            \"departureOccupation\": [],\n            \"returnOccupation\": [],\n            \"departureClases\": [\n                \"G\"\n            ],\n            \"returnClases\": [],\n            \"namePrefix\": \"MR\"\n        }\n    ],\n    \"observations\": \"\",\n    \"occupation\": [\n        {\n            \"type\": \"ADT\",\n            \"segments\": {\n                \"ES_8314_070000\": \"G\"\n            }\n        }\n    ],\n    \"ticketTimeLimit\": 24\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/kiu/flight-offers/booking",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"kiu",
+								"flight-offers",
+								"booking"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"sesion_json\": {\n        \"vuelo\": [\n            {\n                \"gds\": \"kiu\",\n                \"no\": 0,\n                \"fl_partida_cod\": \"PMV\",\n                \"fl_partida\": \"Porlamar\",\n                \"fl_destino_cod\": \"CCS\",\n                \"fl_destino\": \"Caracas - Simón Bolívar Intl\",\n                \"ruta\": \"PMV-CCS\",\n                \"adl\": 1,\n                \"ted\": 0,\n                \"chd\": 0,\n                \"inf\": 0,\n                \"loc\": \"FIWPOQ\",\n                \"kiu_moneda\": 2,\n                \"fl_fecha_ida\": \"07/01/2026\",\n                \"vue\": [\n                    {\n                        \"1\": 1,\n                        \"2\": 0,\n                        \"3\": 0,\n                        \"4\": 0,\n                        \"fl_linea_aerea_cod\": \"ES\",\n                        \"fl_linea_aerea\": \"Estelar Airlines\",\n                        \"fl_partida_cod\": \"PMV\",\n                        \"fl_partida\": \"Porlamar\",\n                        \"fl_destino_cod\": \"CCS\",\n                        \"fl_destino\": \"Caracas - Simón Bolívar Intl\",\n                        \"fl_fecha\": \"07/01/2026\",\n                        \"ruta\": \"PMV-CCS\",\n                        \"fl_num_vuelo\": \"8314\",\n                        \"fl_clase\": \"G\",\n                        \"fl_hora_salida\": \"07:00:00\",\n                        \"fl_hora_llegada\": \"08:00:00\",\n                        \"fl_hora_salida_txt\": \"07:00 AM\",\n                        \"fl_hora_llegada_txt\": \"08:00 AM\",\n                        \"prepagado\": 0,\n                        \"kiu\": {\n                            \"base\": 39.19,\n                            \"6A\": 1.18,\n                            \"6B\": 40,\n                            \"AK\": 13,\n                            \"C2\": 1.25,\n                            \"EU\": 0.39\n                        },\n                        \"kiudesglose\": [\n                            {\n                                \"type\": \"ADT\",\n                                \"quantity\": \"1\",\n                                \"rates\": {\n                                    \"base\": 39.19,\n                                    \"6A\": 1.18,\n                                    \"6B\": 40,\n                                    \"AK\": 13,\n                                    \"C2\": 1.25,\n                                    \"EU\": 0.39\n                                },\n                                \"tipo\": \"ADT\",\n                                \"cantidad\": \"1\",\n                                \"tasas\": {\n                                    \"base\": 39.19,\n                                    \"6A\": 1.18,\n                                    \"6B\": 40,\n                                    \"AK\": 13,\n                                    \"C2\": 1.25,\n                                    \"EU\": 0.39\n                                }\n                            }\n                        ],\n                        \"internacional\": 0,\n                        \"desc_trans\": 0\n                    }\n                ],\n                \"precio\": [\n                    {\n                        \"adl\": {\n                            \"usd\": {\n                                \"base\": 39.19,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 9.5,\n                                \"subtotal\": 39.19,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.39,\n                                \"Q\": 0,\n                                \"YR\": 55.43,\n                                \"ft_total\": 0.39,\n                                \"impuestos\": 55.82,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.5,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.5,\n                                \"ft\": 0.015,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 95.00999999999999,\n                                \"total\": 95.00999999999999,\n                                \"total_full\": 96.50999999999999,\n                                \"base_format\": \"$ 39.19\",\n                                \"fee_avt_format\": \"$ 0.00\",\n                                \"comision_format\": \"$ 0.00\",\n                                \"fee_porc_format\": \"$ 9.50\",\n                                \"subtotal_format\": \"$ 39.19\",\n                                \"YN_format\": \"$ 0.00\",\n                                \"IVA_format\": \"$ 0.00\",\n                                \"FT_format\": \"$ 0.39\",\n                                \"Q_format\": \"$ 0.00\",\n                                \"YR_format\": \"$ 55.43\",\n                                \"ft_total_format\": \"$ 0.39\",\n                                \"impuestos_format\": \"$ 55.82\",\n                                \"costo_tc_format\": \"$ 0.00\",\n                                \"costo_islr_format\": \"$ 0.00\",\n                                \"costo_idb_format\": \"$ 0.00\",\n                                \"costo_igtf_format\": \"$ 0.00\",\n                                \"gastos_tc_format\": \"$ 0.00\",\n                                \"fee_format\": \"$ 1.50\",\n                                \"descuento_trans_format\": \"$ 0.00\",\n                                \"com_avt_format\": \"$ 0.00\",\n                                \"comision_avt_format\": \"$ 0.00\",\n                                \"over_comision_avt_format\": \"$ 0.00\",\n                                \"FEE_format\": \"$ 0.00\",\n                                \"fee_tot_format\": \"$ 1.50\",\n                                \"ft_format\": \"$ 0.02\",\n                                \"prepago_format\": \"$ 0.00\",\n                                \"pvp_iva_format\": \"$ 0.00\",\n                                \"cash_tot_format\": \"$ 95.01\",\n                                \"total_format\": \"$ 95.01\",\n                                \"total_full_format\": \"$ 96.51\"\n                            },\n                            \"bsf\": {\n                                \"base\": 39.19,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 7.5,\n                                \"subtotal\": 39.19,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.39,\n                                \"Q\": 0,\n                                \"YR\": 55.43,\n                                \"ft_total\": 0.39,\n                                \"impuestos\": 55.82,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.5,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.5,\n                                \"ft\": 0.015,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 95.00999999999999,\n                                \"total\": 95.00999999999999,\n                                \"total_full\": 96.50999999999999,\n                                \"base_format\": \"39,19 Bs\",\n                                \"fee_avt_format\": \"0,00 Bs\",\n                                \"comision_format\": \"0,00 Bs\",\n                                \"fee_porc_format\": \"7,50 Bs\",\n                                \"subtotal_format\": \"39,19 Bs\",\n                                \"YN_format\": \"0,00 Bs\",\n                                \"IVA_format\": \"0,00 Bs\",\n                                \"FT_format\": \"0,39 Bs\",\n                                \"Q_format\": \"0,00 Bs\",\n                                \"YR_format\": \"55,43 Bs\",\n                                \"ft_total_format\": \"0,39 Bs\",\n                                \"impuestos_format\": \"55,82 Bs\",\n                                \"costo_tc_format\": \"0,00 Bs\",\n                                \"costo_islr_format\": \"0,00 Bs\",\n                                \"costo_idb_format\": \"0,00 Bs\",\n                                \"costo_igtf_format\": \"0,00 Bs\",\n                                \"gastos_tc_format\": \"0,00 Bs\",\n                                \"fee_format\": \"1,50 Bs\",\n                                \"descuento_trans_format\": \"0,00 Bs\",\n                                \"com_avt_format\": \"0,00 Bs\",\n                                \"comision_avt_format\": \"0,00 Bs\",\n                                \"over_comision_avt_format\": \"0,00 Bs\",\n                                \"FEE_format\": \"0,00 Bs\",\n                                \"fee_tot_format\": \"1,50 Bs\",\n                                \"ft_format\": \"0,02 Bs\",\n                                \"prepago_format\": \"0,00 Bs\",\n                                \"pvp_iva_format\": \"0,00 Bs\",\n                                \"cash_tot_format\": \"95,01 Bs\",\n                                \"total_format\": \"95,01 Bs\",\n                                \"total_full_format\": \"96,51 Bs\"\n                            },\n                            \"eur\": {\n                                \"base\": 34.377192982456144,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 12.5,\n                                \"subtotal\": 34.377192982456144,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.39,\n                                \"Q\": 0,\n                                \"YR\": 55.43,\n                                \"ft_total\": 0.39,\n                                \"impuestos\": 55.82,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.3157894736842106,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.3157894736842106,\n                                \"ft\": 0.013157894736842106,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 90.19719298245614,\n                                \"total\": 90.19719298245614,\n                                \"total_full\": 91.51298245614035,\n                                \"base_format\": \"34,38 €\",\n                                \"fee_avt_format\": \"0,00 €\",\n                                \"comision_format\": \"0,00 €\",\n                                \"fee_porc_format\": \"12,50 €\",\n                                \"subtotal_format\": \"34,38 €\",\n                                \"YN_format\": \"0,00 €\",\n                                \"IVA_format\": \"0,00 €\",\n                                \"FT_format\": \"0,39 €\",\n                                \"Q_format\": \"0,00 €\",\n                                \"YR_format\": \"55,43 €\",\n                                \"ft_total_format\": \"0,39 €\",\n                                \"impuestos_format\": \"55,82 €\",\n                                \"costo_tc_format\": \"0,00 €\",\n                                \"costo_islr_format\": \"0,00 €\",\n                                \"costo_idb_format\": \"0,00 €\",\n                                \"costo_igtf_format\": \"0,00 €\",\n                                \"gastos_tc_format\": \"0,00 €\",\n                                \"fee_format\": \"1,32 €\",\n                                \"descuento_trans_format\": \"0,00 €\",\n                                \"com_avt_format\": \"0,00 €\",\n                                \"comision_avt_format\": \"0,00 €\",\n                                \"over_comision_avt_format\": \"0,00 €\",\n                                \"FEE_format\": \"0,00 €\",\n                                \"fee_tot_format\": \"1,32 €\",\n                                \"ft_format\": \"0,01 €\",\n                                \"prepago_format\": \"0,00 €\",\n                                \"pvp_iva_format\": \"0,00 €\",\n                                \"cash_tot_format\": \"90,20 €\",\n                                \"total_format\": \"90,20 €\",\n                                \"total_full_format\": \"91,51 €\"\n                            }\n                        },\n                        \"Total\": {\n                            \"usd\": {\n                                \"base\": 39.19,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 9.5,\n                                \"subtotal\": 39.19,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.39,\n                                \"Q\": 0,\n                                \"YR\": 55.43,\n                                \"ft_total\": 0.39,\n                                \"impuestos\": 55.82,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.5,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.5,\n                                \"ft\": 0.015,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 95.00999999999999,\n                                \"total\": 95.00999999999999,\n                                \"total_full\": 96.50999999999999,\n                                \"base_format\": \"$ 39.19\",\n                                \"fee_avt_format\": \"$ 0.00\",\n                                \"comision_format\": \"$ 0.00\",\n                                \"fee_porc_format\": \"$ 9.50\",\n                                \"subtotal_format\": \"$ 39.19\",\n                                \"YN_format\": \"$ 0.00\",\n                                \"IVA_format\": \"$ 0.00\",\n                                \"FT_format\": \"$ 0.39\",\n                                \"Q_format\": \"$ 0.00\",\n                                \"YR_format\": \"$ 55.43\",\n                                \"ft_total_format\": \"$ 0.39\",\n                                \"impuestos_format\": \"$ 55.82\",\n                                \"costo_tc_format\": \"$ 0.00\",\n                                \"costo_islr_format\": \"$ 0.00\",\n                                \"costo_idb_format\": \"$ 0.00\",\n                                \"costo_igtf_format\": \"$ 0.00\",\n                                \"gastos_tc_format\": \"$ 0.00\",\n                                \"fee_format\": \"$ 1.50\",\n                                \"descuento_trans_format\": \"$ 0.00\",\n                                \"com_avt_format\": \"$ 0.00\",\n                                \"comision_avt_format\": \"$ 0.00\",\n                                \"over_comision_avt_format\": \"$ 0.00\",\n                                \"FEE_format\": \"$ 0.00\",\n                                \"fee_tot_format\": \"$ 1.50\",\n                                \"ft_format\": \"$ 0.02\",\n                                \"prepago_format\": \"$ 0.00\",\n                                \"pvp_iva_format\": \"$ 0.00\",\n                                \"cash_tot_format\": \"$ 95.01\",\n                                \"total_format\": \"$ 95.01\",\n                                \"total_full_format\": \"$ 96.51\"\n                            },\n                            \"bsf\": {\n                                \"base\": 39.19,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 7.5,\n                                \"subtotal\": 39.19,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.39,\n                                \"Q\": 0,\n                                \"YR\": 55.43,\n                                \"ft_total\": 0.39,\n                                \"impuestos\": 55.82,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.5,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.5,\n                                \"ft\": 0.015,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 95.00999999999999,\n                                \"total\": 95.00999999999999,\n                                \"total_full\": 96.50999999999999,\n                                \"base_format\": \"39,19 Bs\",\n                                \"fee_avt_format\": \"0,00 Bs\",\n                                \"comision_format\": \"0,00 Bs\",\n                                \"fee_porc_format\": \"7,50 Bs\",\n                                \"subtotal_format\": \"39,19 Bs\",\n                                \"YN_format\": \"0,00 Bs\",\n                                \"IVA_format\": \"0,00 Bs\",\n                                \"FT_format\": \"0,39 Bs\",\n                                \"Q_format\": \"0,00 Bs\",\n                                \"YR_format\": \"55,43 Bs\",\n                                \"ft_total_format\": \"0,39 Bs\",\n                                \"impuestos_format\": \"55,82 Bs\",\n                                \"costo_tc_format\": \"0,00 Bs\",\n                                \"costo_islr_format\": \"0,00 Bs\",\n                                \"costo_idb_format\": \"0,00 Bs\",\n                                \"costo_igtf_format\": \"0,00 Bs\",\n                                \"gastos_tc_format\": \"0,00 Bs\",\n                                \"fee_format\": \"1,50 Bs\",\n                                \"descuento_trans_format\": \"0,00 Bs\",\n                                \"com_avt_format\": \"0,00 Bs\",\n                                \"comision_avt_format\": \"0,00 Bs\",\n                                \"over_comision_avt_format\": \"0,00 Bs\",\n                                \"FEE_format\": \"0,00 Bs\",\n                                \"fee_tot_format\": \"1,50 Bs\",\n                                \"ft_format\": \"0,02 Bs\",\n                                \"prepago_format\": \"0,00 Bs\",\n                                \"pvp_iva_format\": \"0,00 Bs\",\n                                \"cash_tot_format\": \"95,01 Bs\",\n                                \"total_format\": \"95,01 Bs\",\n                                \"total_full_format\": \"96,51 Bs\"\n                            },\n                            \"eur\": {\n                                \"base\": 34.377192982456144,\n                                \"fee_avt\": 0,\n                                \"comision\": 0,\n                                \"fee_porc\": 12.5,\n                                \"subtotal\": 34.377192982456144,\n                                \"YN\": 0,\n                                \"IVA\": 0,\n                                \"FT\": 0.39,\n                                \"Q\": 0,\n                                \"YR\": 55.43,\n                                \"ft_total\": 0.39,\n                                \"impuestos\": 55.82,\n                                \"costo_tc\": 0,\n                                \"costo_islr\": 0,\n                                \"costo_idb\": 0,\n                                \"costo_igtf\": 0,\n                                \"gastos_tc\": 0,\n                                \"fee\": 1.3157894736842106,\n                                \"descuento_trans\": 0,\n                                \"com_avt\": 0,\n                                \"comision_avt\": 0,\n                                \"over_comision_avt\": 0,\n                                \"FEE\": 0,\n                                \"fee_tot\": 1.3157894736842106,\n                                \"ft\": 0.013157894736842106,\n                                \"prepago\": 0,\n                                \"pvp_iva\": 0,\n                                \"cash_tot\": 90.19719298245614,\n                                \"total\": 90.19719298245614,\n                                \"total_full\": 91.51298245614035,\n                                \"base_format\": \"34,38 €\",\n                                \"fee_avt_format\": \"0,00 €\",\n                                \"comision_format\": \"0,00 €\",\n                                \"fee_porc_format\": \"12,50 €\",\n                                \"subtotal_format\": \"34,38 €\",\n                                \"YN_format\": \"0,00 €\",\n                                \"IVA_format\": \"0,00 €\",\n                                \"FT_format\": \"0,39 €\",\n                                \"Q_format\": \"0,00 €\",\n                                \"YR_format\": \"55,43 €\",\n                                \"ft_total_format\": \"0,39 €\",\n                                \"impuestos_format\": \"55,82 €\",\n                                \"costo_tc_format\": \"0,00 €\",\n                                \"costo_islr_format\": \"0,00 €\",\n                                \"costo_idb_format\": \"0,00 €\",\n                                \"costo_igtf_format\": \"0,00 €\",\n                                \"gastos_tc_format\": \"0,00 €\",\n                                \"fee_format\": \"1,32 €\",\n                                \"descuento_trans_format\": \"0,00 €\",\n                                \"com_avt_format\": \"0,00 €\",\n                                \"comision_avt_format\": \"0,00 €\",\n                                \"over_comision_avt_format\": \"0,00 €\",\n                                \"FEE_format\": \"0,00 €\",\n                                \"fee_tot_format\": \"1,32 €\",\n                                \"ft_format\": \"0,01 €\",\n                                \"prepago_format\": \"0,00 €\",\n                                \"pvp_iva_format\": \"0,00 €\",\n                                \"cash_tot_format\": \"90,20 €\",\n                                \"total_format\": \"90,20 €\",\n                                \"total_full_format\": \"91,51 €\"\n                            }\n                        }\n                    }\n                ],\n                \"pax\": {\n                    \"nombre_adl_1\": \"JOSE\",\n                    \"ptc_adl_1\": \"ADT\",\n                    \"apellido_adl_1\": \"QUIJADA\",\n                    \"nacionalidad_adl_1\": \"V\",\n                    \"pasaporte_adl_1\": \"26842215\",\n                    \"documento_adl_1\": \"26842215\",\n                    \"titulo_adl_1\": \"MR\",\n                    \"correo_adl_1\": \"a@a.com\",\n                    \"telefono_adl_1\": \"0412351045\",\n                    \"pais_adl_1\": \"Venezuela\",\n                    \"estado_adl_1\": \"Nueva Esparta\",\n                    \"ciudad_adl_1\": \"porlamar\",\n                    \"direccion_adl_1\": \"porlamar\",\n                    \"codigopostal_adl_1\": 6301,\n                    \"domicilio_adl_1\": \"porlamar, porlamar. Nueva Esparta, Venezuela\",\n                    \"localizador_adl_1\": \"FIWPOQ\",\n                    \"tsa_nacimiento_adl_1\": \"1998-12-11\",\n                    \"tsa_paisnacimiento_adl_1\": \"VE\",\n                    \"tsa_genero_adl_1\": \"M\",\n                    \"tsa_vencimientodoc_adl_1\": \"\",\n                    \"tsa_paisdoc_adl_1\": \"VE\",\n                    \"tsa_tipodoc_adl_1\": \"P\",\n                    \"tsa_doc_adl_1\": 0\n                }\n            }\n        ]\n    },\n    \"vid\": 816690\n}"
+				}
+			]
+		},
+		{
+			"name": "Paquete. Buscar cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es-US,es-419;q=0.9,es;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:4200"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"field\": \"nombre\",\n    \"filter\": \"contains\",\n    \"value\": \"PRUEBA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/clients/search",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"clients",
+						"search"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Paquete. Buscar cliente RS",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "[\n    {\n        \"cid\": 1326,\n        \"nombre\": \"prueba\",\n        \"apellido\": \"prueba\",\n        \"email\": \"prueba@gmail.com\",\n        \"pais_id\": \"VE\",\n        \"estado\": \"prueba\",\n        \"telefono_fijo\": \"pruebax\",\n        \"telefono_movil\": \"pruebax\",\n        \"titulo\": 1\n    },\n    {\n        \"cid\": 192278,\n        \"nombre\": \"prueba\",\n        \"apellido\": \"prueba\",\n        \"email\": null,\n        \"pais_id\": \"VE\",\n        \"estado\": \"Merida\",\n        \"telefono_fijo\": null,\n        \"telefono_movil\": null,\n        \"titulo\": 1\n    },\n    {\n        \"cid\": 201213,\n        \"nombre\": \"prueba\",\n        \"apellido\": \"prueba\",\n        \"email\": null,\n        \"pais_id\": \"VE\",\n        \"estado\": \"Merida\",\n        \"telefono_fijo\": null,\n        \"telefono_movil\": null,\n        \"titulo\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Paquete. Asignar cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es-US,es-419;q=0.9,es;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvY2hhbmdlLXVzZXIiLCJpYXQiOjE3NjQ2MDc2NzQsImV4cCI6MjM0MDYwNzY3NCwibmJmIjoxNzY0NjA3Njc0LCJqdGkiOiIyZXVWZzhOa2JTaDhEdDBhIiwic3ViIjoiMyIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImE2YzVlN2RmNGIzMzEzMGY4YTQ4NWZmNGQ4OWUzNzY2IiwiYy11IjoyMjg0fQ.EPIBS0Z372vCOMP8TALs6fz-3PRQyXGJXLs1B6pwU5c"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:4200"
+					},
+					{
+						"key": "Pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:4200/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vid\": 716704,\n    \"client_id\": 1326\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/booking/flight-orders/confirm-client",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"booking",
+						"flight-orders",
+						"confirm-client"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://devapi.cervotravel.app"
+		},
+		{
+			"key": "bearerToken",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTc2MzEyNzE0OSwiZXhwIjozMDE0NTUyNzE0OSwibmJmIjoxNzYzMTI3MTQ5LCJqdGkiOiJRS0tOMjhKd1JCRHRZTUJEIiwic3ViIjoiMjI4NCIsInBydiI6ImRkZWI5ZDE1NzA4YmUxYWExZWY2MjE4ODBjYjhlMjJiZjQ0ZGRjOWQiLCJpZCI6ImRlNzZlZDQzZGNiNjE5OWYxYjE0OWZlNzg5OGZkMTA5In0.qYZakqz27VNLleyij7Gu2pDDd05YrqVMREiCnei-3e4"
+		}
+	]
+}

@@ -1,0 +1,100 @@
+    def _get_booking_function(self, pnr):
+        """Consulta una reserva con formato igual al mensaje de creación"""
+        try:
+            result = flight_service.get_booking_details(pnr=pnr)
+            if not result.get('success'):
+                return {"success": False, "message": "Reserva no encontrada"}
+            
+            pasajeros = result.get('passengers', [])
+            vuelos = result.get('flights', [])
+            precio_total = result.get('balance', 'N/A')
+            estado = result.get('status', 'N/A')
+            vencimiento = result.get('vencimiento', '')
+            vid = result.get('vid', '')
+            
+            num_vuelos = len(vuelos)
+            tipo_viaje = "🔄 IDA Y VUELTA" if num_vuelos >= 2 else "✈️ SOLO IDA"
+            
+            mensaje = f"""🎫 *DATOS DE LA RESERVA*
+📌 *PNR:* {result.get('pnr', pnr)}
+📊 *Estado:* {estado}
+🎫 *Tipo:* {tipo_viaje}"""
+
+            if vid:
+                mensaje += f"""
+🆔 *VID:* {vid}"""
+
+            if vencimiento:
+                mensaje += f"""
+⏰ *Vencimiento:* {vencimiento}"""
+
+            mensaje += f"""
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+👥 *PASAJEROS ({len(pasajeros)})*"""
+
+            for i, pax in enumerate(pasajeros, 1):
+                nombre = pax.get('nombre', 'N/A')
+                documento = pax.get('documento', 'N/A')
+                mensaje += f"""
+
+👤 *Pasajero {i}:*
+   👤 {nombre}
+   🆔 {documento}"""
+
+            for i, vuelo in enumerate(vuelos, 1):
+                tipo_vuelo = "IDA" if i == 1 else "VUELTA"
+                mensaje += f"""
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+✈️ *VUELO DE {tipo_vuelo}*
+✈️ *Aerolínea:* {vuelo.get('aerolinea', 'N/A')}
+🎫 *Vuelo:* {vuelo.get('vuelo', 'N/A')}
+📍 *Ruta:* {vuelo.get('ruta', 'N/A')}
+📅 *Fecha:* {format_date_dd_mm_yyyy(vuelo.get('fecha', 'N/A'))}
+🕐 *Salida:* {vuelo.get('hora_salida', 'N/A')}
+🕐 *Llegada:* {vuelo.get('hora_llegada', 'N/A')}
+💺 *Clase:* {vuelo.get('clase', 'N/A')}"""
+
+            mensaje += f"""
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+💰 *RESUMEN DE COSTOS*"""
+
+            try:
+                import re
+                precio_limpio = re.sub(r'[^\d.]', '', str(precio_total))
+                if precio_limpio and len(pasajeros) > 0:
+                    precio_float = float(precio_limpio)
+                    precio_unitario = precio_float / len(pasajeros)
+                    mensaje += f"""
+   💵 *Por persona:* ${precio_unitario:.2f} USD
+   👥 *Pasajeros:* {len(pasajeros)}
+   ━━━━━━━━━━━━━━━━━━━━"""
+            except:
+                pass
+
+            mensaje += f"""
+   💰 *TOTAL:* {precio_total}
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+💡 ¿Necesitas ayuda con algo más?"""
+
+            return {
+                "success": True,
+                "message": mensaje,
+                "pnr": result.get('pnr'),
+                "estado": estado,
+                "pasajeros_count": len(pasajeros),
+                "vuelos_count": num_vuelos,
+                "precio_total": precio_total,
+                "pasajeros": pasajeros,
+                "vuelos": vuelos
+            }
+        except Exception as e:
+            logger.error(f"Error consultando reserva: {str(e)}")
+            return {"success": False, "error": str(e)}

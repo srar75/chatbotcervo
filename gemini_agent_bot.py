@@ -37,6 +37,21 @@ def format_date_dd_mm_yyyy(date_str):
         return date_str
 
 
+def safe_float(val, default=0.0):
+    """Convierte un valor a float de forma segura, manejando listas y strings con basura"""
+    if val is None: return default
+    if isinstance(val, list):
+        val = val[0] if len(val) > 0 else default
+    try:
+        if isinstance(val, str):
+            # Quitar todo lo que no sea número o punto decimal
+            val = re.sub(r'[^0-9.]', '', val)
+            if not val: return default
+        return float(val)
+    except (ValueError, TypeError):
+        return default
+
+
 class GeminiAgentBot:
     """Chatbot Cervo con IA - Conversación natural usando Gemini 3 Pro"""
     def __init__(self):
@@ -716,6 +731,71 @@ Responde SOLO la clave (ejemplo: {list(options.keys())[0]}). Si no coincide con 
     def _process_with_ai(self, session, phone, message, media_url=None):
         """Procesa el mensaje usando Gemini 3 Pro"""
         try:
+            # INTERCEPCIÓN DE SELECCIÓN DE CLASE (MÁS PRIORITARIA)
+            # Captura cuando el usuario elige la letra de clase después de ver las opciones
+            if session.data.get('awaiting_class_selection') and not session.data.get('waiting_for_field'):
+                # Extraer la letra de clase del mensaje (ej: "Clase w", "W", "clase B", "la B", etc.)
+                msg_clean = message.strip().upper()
+                # Buscar letra de clase del vuelo en el mensaje del usuario
+                # Clases válidas en el sistema KIU
+                VALID_CLASSES = {'Y','B','M','H','Q','V','W','S','T','L','K','G','U','E','N','R','O','J','C','D','I','Z','F','A','P'}
+                extracted_class = None
+                # Patrón 1: "CLASE W" o "CLASE: W"
+                m = re.search(r'\bCLASE\s*:?\s*([A-Z])\b', msg_clean)
+                if m and m.group(1) in VALID_CLASSES:
+                    extracted_class = m.group(1)
+                # Patrón 2: Mensaje de una sola letra (ej: "W")
+                if not extracted_class and re.match(r'^([A-Z])$', msg_clean.strip()):
+                    letter = msg_clean.strip()
+                    if letter in VALID_CLASSES:
+                        extracted_class = letter
+                # Patrón 3: "LA W" o "LA CLASE W"
+                if not extracted_class:
+                    m = re.search(r'\bLA\s+(?:CLASE\s+)?([A-Z])\b', msg_clean)
+                    if m and m.group(1) in VALID_CLASSES:
+                        extracted_class = m.group(1)
+                # Patrón 4: Cualquier letra de clase válida en el mensaje corto (<= 10 chars)
+                if not extracted_class and len(msg_clean.strip()) <= 10:
+                    for ch in msg_clean:
+                        if ch in VALID_CLASSES:
+                            extracted_class = ch
+                            break
+                
+                if extracted_class and len(extracted_class) == 1:
+                    is_return = session.data.get('awaiting_class_selection_is_return', False)
+                    flight_index = session.data.get('selected_return_flight_index' if is_return else 'pending_flight_index') or session.data.get('selected_flight_index', 1)
+                    
+                    logger.info(f"=== CLASE SELECCIONADA: {extracted_class} (is_return={is_return}, flight_index={flight_index}) ===")
+                    self._send_response(phone, "Preparando confirmación de vuelo...", session)
+                    
+                    # Limpiar el estado de espera de clase
+                    session.data['awaiting_class_selection'] = False
+                    
+                    # Llamar a la función de confirmación con la clase elegida
+                    result = self._confirm_flight_selection_function(
+                        flight_index=flight_index,
+                        flight_class=extracted_class,
+                        session=session,
+                        is_return=is_return
+                    )
+                    
+                    if result.get('success'):
+                        # Guardar la clase seleccionada en sesión
+                        if is_return:
+                            session.data['selected_return_flight_class'] = extracted_class
+                        else:
+                            session.data['selected_flight_class'] = extracted_class
+                        # Mostrar el mensaje de confirmación del vuelo
+                        return self._send_response(phone, result.get('message', ''), session)
+                    else:
+                        # Error - posiblemente clase no disponible
+                        # Restaurar estado de selección
+                        session.data['awaiting_class_selection'] = True
+                        return self._send_response(phone, result.get('message', 'Clase no disponible. Por favor elige otra letra.'), session)
+                else:
+                    # No se detectó letra de clase válida
+                    return self._send_response(phone, "No entendí qué clase elegiste. Por favor escribe solo la letra de la clase (ej: W, Y, B, D).", session)
+
             # INTERCEPCIÓN DE PROCESAMIENTO DE RESERVA (Tras confirmación de vuelo)
             if session.data.get('awaiting_flight_confirmation') and not session.data.get('waiting_for_field'):
                 msg_upper = message.strip().upper()
@@ -815,8 +895,10 @@ Responde SOLO la clave (ejemplo: {list(options.keys())[0]}). Si no coincide con 
                                 logger.info(f"Fecha de regreso ya existe en sesión: {return_date}")
                                 # Enviar mensaje de confirmación intermedio
                                 # Construir mensaje de confirmación detallado
-                                ida_flight = session.data.get('selected_flight', {})
-                                ida_airline = ida_flight.get('airline_name', 'Aerolínea')
+                                _flights_list = session.data.get('available_flights', [])
+                                _flight_idx = session.data.get('selected_flight_index', 1)
+                                ida_flight = _flights_list[_flight_idx - 1] if _flights_list and _flight_idx and _flight_idx <= len(_flights_list) else {}
+                                ida_airline = ida_flight.get('airline_name', 'la aerolínea seleccionada')
                                 ida_num = ida_flight.get('flight_number', '')
                                 ida_class_code = session.data.get('selected_flight_class', 'Y')
                                 ida_date_fmt = format_date_dd_mm_yyyy(ida_flight.get('date', ''))
@@ -825,8 +907,9 @@ Responde SOLO la clave (ejemplo: {list(options.keys())[0]}). Si no coincide con 
                                 self._send_response(phone, confirm_msg, session)
                                 
                                 # Modificar el mensaje para que la AI procese la búsqueda automáticamente
-                                # IMPORTANTE: Decirle que YA confirmamos para que no repita el texto
-                                message = f"He confirmado el vuelo de ida {ida_airline} {ida_num}. El usuario YA recibió la confirmación. Por favor busca inmediatamente el vuelo de REGRESO para la fecha {return_date}. Trip type: vuelta. Muestra SOLO los resultados de la búsqueda."
+                                # FUNDAMENTAL: NO generar otro mensaje de confirmación (ya se envió confirm_msg arriba)
+                                # Solo pedir a Gemini que llame a search_flights para el vuelo de vuelta
+                                message = f"INSTRUCCION INTERNA - NO MOSTRAR AL USUARIO: Busca ahora el vuelo de REGRESO origen={ida_flight.get('destination','CCS')} destino={ida_flight.get('origin','CCS')} fecha={return_date} trip_type=vuelta. NO confirmes nada previamente, NO repitas información del vuelo de ida. Solo llama a la función de búsqueda y muestra los resultados."
                                 
                                 # No retornamos, para que el código fluya hacia la llamada a Gemini al final de _process_with_ai
                                 logger.info("Instrucción de búsqueda de regreso preparada para Gemini")
@@ -848,9 +931,11 @@ Responde SOLO la clave (ejemplo: {list(options.keys())[0]}). Si no coincide con 
                                 msg_confirm_text += f" (Para {total_pax} personas)"
                                 
                             # Determinar qué documento pedir según el vuelo
-                            selected_flight = session.data.get('selected_flight', {})
+                            _fls = session.data.get('available_flights', [])
+                            _fidx = session.data.get('ida_flight_index') or session.data.get('selected_flight_index', 1)
+                            selected_flight = _fls[_fidx - 1] if _fls and _fidx and _fidx <= len(_fls) else {}
                             origin = selected_flight.get('origin', 'CCS')
-                            destination = selected_flight.get('destination', 'MIA')
+                            destination = selected_flight.get('destination', 'CCS')
                             national_airports = ['CCS', 'PMV', 'MAR', 'VLN', 'BLA', 'PZO', 'BRM', 'STD', 'VLV', 'MUN', 'CUM', 'LRV', 'CAJ', 'CBL', 'BNS', 'LFR', 'SVZ', 'GUQ', 'SFD', 'TUV', 'AGV', 'CZE', 'GDO', 'PYH']
                             is_international = (origin not in national_airports) or (destination not in national_airports)
                             
@@ -932,6 +1017,13 @@ Responde SOLO la clave (ejemplo: {list(options.keys())[0]}). Si no coincide con 
                                         
                                         classes_msg += "\n\n\n"
                                         classes_msg += " *Escribe la letra de la clase que deseas* (ej: W, Y, B...)"
+                                        
+                                        # ACTIVAR ESTADO DE ESPERA DE CLASE
+                                        session.data['awaiting_class_selection'] = True
+                                        session.data['awaiting_class_selection_is_return'] = is_return
+                                        # Guardar el índice del vuelo pendiente para la confirmación
+                                        if not is_return:
+                                            session.data['pending_flight_index'] = pending_index
                                         
                                         return self._send_response(phone, classes_msg, session)
                                     else:
@@ -1064,7 +1156,7 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                                 precio_ida = 0
                                 flight_classes_prices = session.data.get('ida_flight_classes_prices') or session.data.get('flight_classes_prices', {})
                                 if flight_classes_prices and flight_class.upper() in flight_classes_prices:
-                                    precio_ida = flight_classes_prices[flight_class.upper()].get('price', 0)
+                                    precio_ida = safe_float(flight_classes_prices[flight_class.upper()].get('price', 0))
                                 
                                 # Verificar si hay vuelo de vuelta
                                 return_flights = session.data.get('return_flights', [])
@@ -1079,10 +1171,10 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                                         # Obtener precio de vuelta
                                         return_classes_prices = session.data.get('return_flight_classes_prices', {})
                                         if return_classes_prices and return_flight_class.upper() in return_classes_prices:
-                                            precio_vuelta = return_classes_prices[return_flight_class.upper()].get('price', 0)
+                                            precio_vuelta = safe_float(return_classes_prices[return_flight_class.upper()].get('price', 0))
                                         else:
                                             # Fallback: usar el precio del vuelo de vuelta
-                                            precio_vuelta = return_flight.get('price', 0)
+                                            precio_vuelta = safe_float(return_flight.get('price', 0))
                                 
                                 # Calcular totales
                                 precio_por_persona = precio_ida + precio_vuelta
@@ -1167,9 +1259,11 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                         session.data['using_document_image'] = True
                         
                         # Determinar qué documento pedir según el vuelo
-                        selected_flight = session.data.get('selected_flight', {})
+                        _fls2 = session.data.get('available_flights', [])
+                        _fidx2 = session.data.get('ida_flight_index') or session.data.get('selected_flight_index', 1)
+                        selected_flight = _fls2[_fidx2 - 1] if _fls2 and _fidx2 and _fidx2 <= len(_fls2) else {}
                         origin = selected_flight.get('origin', 'CCS')
-                        destination = selected_flight.get('destination', 'MIA')
+                        destination = selected_flight.get('destination', 'CCS')
                         national_airports = ['CCS', 'PMV', 'MAR', 'VLN', 'BLA', 'PZO', 'BRM', 'STD', 'VLV', 'MUN', 'CUM', 'LRV', 'CAJ', 'CBL', 'BNS', 'LFR', 'SVZ', 'GUQ', 'SFD', 'TUV', 'AGV', 'CZE', 'GDO', 'PYH']
                         is_international = (origin not in national_airports) or (destination not in national_airports)
                         
@@ -1179,9 +1273,11 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                     
                     elif session.data.get('flight_selection_fully_confirmed') and not media_url:
                         # Determinar qué documento pedir según el vuelo
-                        selected_flight = session.data.get('selected_flight', {})
+                        _fls3 = session.data.get('available_flights', [])
+                        _fidx3 = session.data.get('ida_flight_index') or session.data.get('selected_flight_index', 1)
+                        selected_flight = _fls3[_fidx3 - 1] if _fls3 and _fidx3 and _fidx3 <= len(_fls3) else {}
                         origin = selected_flight.get('origin', 'CCS')
-                        destination = selected_flight.get('destination', 'MIA')
+                        destination = selected_flight.get('destination', 'CCS')
                         national_airports = ['CCS', 'PMV', 'MAR', 'VLN', 'BLA', 'PZO', 'BRM', 'STD', 'VLV', 'MUN', 'CUM', 'LRV', 'CAJ', 'CBL', 'BNS', 'LFR', 'SVZ', 'GUQ', 'SFD', 'TUV', 'AGV', 'CZE', 'GDO', 'PYH']
                         is_international = (origin not in national_airports) or (destination not in national_airports)
                         
@@ -1309,9 +1405,11 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                         extracted_data['nacionalidad'] = 'VE'
                         
                         # VERIFICAR SI ES VUELO INTERNACIONAL
-                        selected_flight = session.data.get('selected_flight', {})
+                        _fls4 = session.data.get('available_flights', [])
+                        _fidx4 = session.data.get('ida_flight_index') or session.data.get('selected_flight_index', 1)
+                        selected_flight = _fls4[_fidx4 - 1] if _fls4 and _fidx4 and _fidx4 <= len(_fls4) else {}
                         origin = selected_flight.get('origin', 'CCS')
-                        destination = selected_flight.get('destination', 'MIA')
+                        destination = selected_flight.get('destination', 'CCS')
                         
                         # Lista básica de aeropuertos nacionales (Venezuela)
                         national_airports = ['CCS', 'PMV', 'MAR', 'VLN', 'BLA', 'PZO', 'BRM', 'STD', 'VLV', 'MUN', 'CUM', 'LRV', 'CAJ', 'CBL', 'BNS', 'LFR', 'SVZ', 'GUQ', 'SFD', 'TUV', 'AGV', 'CZE', 'GDO', 'PYH']
@@ -1348,9 +1446,11 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                         extracted_data['nacionalidad'] = 'EXT'
                             
                         # VERIFICAR SI ES VUELO INTERNACIONAL PARA EXTRANJERO
-                        selected_flight = session.data.get('selected_flight', {})
+                        _fls5 = session.data.get('available_flights', [])
+                        _fidx5 = session.data.get('ida_flight_index') or session.data.get('selected_flight_index', 1)
+                        selected_flight = _fls5[_fidx5 - 1] if _fls5 and _fidx5 and _fidx5 <= len(_fls5) else {}
                         origin = selected_flight.get('origin', 'CCS')
-                        destination = selected_flight.get('destination', 'MIA')
+                        destination = selected_flight.get('destination', 'CCS')
                         national_airports = ['CCS', 'PMV', 'MAR', 'VLN', 'BLA', 'PZO', 'BRM', 'STD', 'VLV', 'MUN', 'CUM', 'LRV', 'CAJ', 'CBL', 'BNS', 'LFR', 'SVZ', 'GUQ', 'SFD', 'TUV', 'AGV', 'CZE', 'GDO', 'PYH']
                         is_international = (origin not in national_airports) or (destination not in national_airports)
                         
@@ -1592,7 +1692,7 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                                 precio_ida = 0
                                 flight_classes_prices = session.data.get('ida_flight_classes_prices') or session.data.get('flight_classes_prices', {})
                                 if flight_classes_prices and flight_class.upper() in flight_classes_prices:
-                                    precio_ida = flight_classes_prices[flight_class.upper()].get('price', 0)
+                                    precio_ida = safe_float(flight_classes_prices[flight_class.upper()].get('price', 0))
                                 
                                 flights = session.data.get('available_flights', [])
                                 flight_index = session.data.get('ida_flight_index') or session.data.get('selected_flight_index', 1)
@@ -1609,9 +1709,9 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                                         return_flight = return_flights[return_flight_index - 1]
                                         return_classes_prices = session.data.get('return_flight_classes_prices', {})
                                         if return_classes_prices and return_flight_class.upper() in return_classes_prices:
-                                            precio_vuelta = return_classes_prices[return_flight_class.upper()].get('price', 0)
+                                            precio_vuelta = safe_float(return_classes_prices[return_flight_class.upper()].get('price', 0))
                                         else:
-                                            precio_vuelta = return_flight.get('price', 0)
+                                            precio_vuelta = safe_float(return_flight.get('price', 0))
                                 
                                 precio_por_persona = precio_ida + precio_vuelta
                                 precio_total = precio_por_persona * total_passengers
@@ -1741,13 +1841,13 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                         )
                         
                         if flight_classes_prices and flight_class.upper() in flight_classes_prices:
-                            precio_ida = flight_classes_prices[flight_class.upper()].get('price', 0)
+                            precio_ida = safe_float(flight_classes_prices[flight_class.upper()].get('price', 0))
                         else:
                             # Fallback: intentar buscar el precio en el vuelo seleccionado directamente
                             flights = session.data.get('available_flights', [])
                             flight_index = session.data.get('ida_flight_index') or session.data.get('selected_flight_index', 1)
                             if flights and 0 < flight_index <= len(flights):
-                                precio_ida = flights[flight_index - 1].get('price', 0)
+                                precio_ida = safe_float(flights[flight_index - 1].get('price', 0))
                         
                         # Obtener datos del vuelo seleccionado
                         flights = session.data.get('available_flights', [])
@@ -1776,9 +1876,9 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                                 # Obtener precio de vuelta
                                 return_classes_prices = session.data.get('return_flight_classes_prices', {})
                                 if return_classes_prices and return_flight_class.upper() in return_classes_prices:
-                                    precio_vuelta = return_classes_prices[return_flight_class.upper()].get('price', 0)
+                                    precio_vuelta = safe_float(return_classes_prices[return_flight_class.upper()].get('price', 0))
                                 else:
-                                    precio_vuelta = return_flight.get('price', 0)
+                                    precio_vuelta = safe_float(return_flight.get('price', 0))
                         else:
                             logger.warning(f" No se encontró vuelo de vuelta - return_flights: {bool(return_flights)}, return_flight_index: {return_flight_index}")
                         
@@ -3204,13 +3304,13 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                     ida_classes_prices = session.data.get('ida_flight_classes_prices') or session.data.get('flight_classes_prices', {})
                     vuelta_classes_prices = session.data.get('return_flight_classes_prices', {})
                     
-                    precio_ida = ida_flight.get('price', 0)
+                    precio_ida = safe_float(ida_flight.get('price', 0))
                     if ida_classes_prices and ida_class.upper() in ida_classes_prices:
-                        precio_ida = ida_classes_prices[ida_class.upper()].get('price', precio_ida)
+                        precio_ida = safe_float(ida_classes_prices[ida_class.upper()].get('price', precio_ida))
                     
-                    precio_vuelta = selected_flight.get('price', 0)
+                    precio_vuelta = safe_float(selected_flight.get('price', 0))
                     if vuelta_classes_prices and flight_class.upper() in vuelta_classes_prices:
-                        precio_vuelta = vuelta_classes_prices[flight_class.upper()].get('price', precio_vuelta)
+                        precio_vuelta = safe_float(vuelta_classes_prices[flight_class.upper()].get('price', precio_vuelta))
                     
                     # Calcular total
                     num_passengers = session.data.get('num_passengers', 1)
@@ -3270,7 +3370,7 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                 available_classes = segments[0].get('classes', {})
                 asientos_disponibles = available_classes.get(flight_class.upper(), "N/A")
             # Obtener el precio de la clase específica seleccionada
-            precio_clase = selected_flight.get('price')  # Precio por defecto
+            precio_clase = safe_float(selected_flight.get('price', 0))
             # Intentar obtener el precio específico de la clase desde la sesión
             # Usar los precios correctos según sea ida o vuelta
             if is_return:
@@ -3279,7 +3379,7 @@ Ahora necesito los datos del pasajero {current_passenger_count + 1} de {total_pa
                 flight_classes_prices = session.data.get('flight_classes_prices', {})
             
             if flight_classes_prices and flight_class.upper() in flight_classes_prices:
-                precio_clase = flight_classes_prices[flight_class.upper()].get('price', precio_clase)
+                precio_clase = safe_float(flight_classes_prices[flight_class.upper()].get('price', precio_clase))
             
             return {
                 "success": True,
@@ -3479,6 +3579,8 @@ Si no puedes leer algún dato, usa "NO_LEGIBLE" como valor."""
             session.data.pop('flight_classes_prices', None)
             session.data.pop('return_flight_classes_prices', None)
             session.data.pop('ida_flight_classes_prices', None)
+            session.data.pop('awaiting_class_selection', None)
+            session.data.pop('awaiting_class_selection_is_return', None)
             session.data.pop('ai_history', None) # Clear history for a clean slate
 
             return self._send_response(phone, response, session)
@@ -3757,29 +3859,36 @@ Si no puedes leer algún dato, usa "NO_LEGIBLE" como valor."""
             if result.get('success'):
                 # Calcular precio total correcto (Ida + Vuelta * Pasajeros)
                 # Intentar obtener precio específico de la clase seleccionada
-                price_ida = float(selected_flight.get('price', 0)) # Default
+                price_ida = safe_float(selected_flight.get('price', 0)) # Default
                 
                 flight_classes_prices = session.data.get('ida_flight_classes_prices') or session.data.get('flight_classes_prices', {})
                 if flight_classes_prices and flight_class.upper() in flight_classes_prices:
-                     price_ida = float(flight_classes_prices[flight_class.upper()].get('price', 0))
+                     price_ida = safe_float(flight_classes_prices[flight_class.upper()].get('price', price_ida))
                 
                 price_vuelta = 0
                 if return_flight:
-                    price_vuelta = float(return_flight.get('price', 0)) # Default
+                    price_vuelta = safe_float(return_flight.get('price', 0)) # Default
                     return_classes_prices = session.data.get('return_flight_classes_prices', {})
                     if return_classes_prices and return_flight_class.upper() in return_classes_prices:
-                        price_vuelta = float(return_classes_prices[return_flight_class.upper()].get('price', 0))
+                        price_vuelta = safe_float(return_classes_prices[return_flight_class.upper()].get('price', price_vuelta))
 
                 total_per_pax = price_ida + price_vuelta
                 total_amount = total_per_pax * len(all_passengers)
                 
                 # PRIORIDAD: Si la API devolvió un precio confirmado, usar ese
                 api_total_price = result.get('actual_price')
-                if api_total_price and float(api_total_price) > 0:
-                    logger.info(f"Usando precio confirmado por API: {api_total_price}")
-                    total_amount = float(api_total_price)
-                    if len(all_passengers) > 0:
-                        total_per_pax = total_amount / len(all_passengers)
+                if api_total_price:
+                    # Si es lista, tomar el primer elemento
+                    _api_p = api_total_price[0] if isinstance(api_total_price, list) else api_total_price
+                    try:
+                        _api_p_float = float(_api_p)
+                        if _api_p_float > 0:
+                            logger.info(f"Usando precio confirmado por API: {_api_p_float}")
+                            total_amount = _api_p_float
+                            if len(all_passengers) > 0:
+                                total_per_pax = total_amount / len(all_passengers)
+                    except (ValueError, TypeError):
+                        pass
                 
                 response_data = {
                     "success": True,

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🦌 CERVO AI - Chatbot de Reservaciones de Vuelos
 
 Bot conversacional inteligente para búsqueda y reservación de vuelos usando Gemini AI.
@@ -79,3 +80,6 @@ Para probar localmente sin WATI:
 ---
 
 **Desarrollado para Cervo Travel** 🦌✈️
+=======
+# chatbotcervo
+>>>>>>> 2b81854d72af955332c80db6dac68f1e8732edeb

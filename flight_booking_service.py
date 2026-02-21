@@ -128,6 +128,12 @@ class FlightBookingServiceComplete:
                         rates = segment.get('rates', {})
                         if rates:
                             price = rates.get('total') or rates.get('price')
+
+                    # Limpiar precio y base si son listas
+                    if isinstance(price, list) and len(price) > 0:
+                        price = price[0]
+                    if isinstance(base, list) and len(base) > 0:
+                        base = base[0]
                     
                     # Calcular duración total
                     total_duration = flight_data.get('journeyDuration', '')
@@ -161,8 +167,8 @@ class FlightBookingServiceComplete:
                         "duration": total_duration,
                         "class": segment.get('class'),
                         "aircraft": segment.get('airEquipType'),
-                        "price": price,
-                        "base": base or 0,
+                        "price": price[0] if isinstance(price, list) else price,
+                        "base": (base[0] if isinstance(base, list) else base) or 0,
                         "currency": "USD",
                         "passengers": passengers,
                         "available_classes": classes,  # Guardar clases disponibles para pricing posterior
@@ -214,7 +220,11 @@ class FlightBookingServiceComplete:
                             pricing_data = pricing_result.get('data', [])
                             if isinstance(pricing_data, list) and len(pricing_data) > 0:
                                 price_value = pricing_data[0].get('price')
+                                if isinstance(price_value, list) and len(price_value) > 0:
+                                    price_value = price_value[0]
                                 base_value = pricing_data[0].get('base', 0)
+                                if isinstance(base_value, list) and len(base_value) > 0:
+                                    base_value = base_value[0]
                                 if price_value and price_value > 0:
                                     return (flight_idx, selected_class, price_value, base_value)
                     except Exception as e:
@@ -349,7 +359,11 @@ class FlightBookingServiceComplete:
                         data = result.get('data', [])
                         if isinstance(data, list) and len(data) > 0:
                             price = data[0].get('price')
+                            if isinstance(price, list) and len(price) > 0:
+                                price = price[0]
                             base = data[0].get('base', 0)
+                            if isinstance(base, list) and len(base) > 0:
+                                base = base[0]
                             if price and price > 0:
                                 return (class_code, price, base, available_classes.get(class_code, '0'))
                 except Exception as e:
@@ -1000,6 +1014,8 @@ class FlightBookingServiceComplete:
                     pnr = vuelo_data.get('loc')
                     # Extraer precio real de la respuesta de KIU si está disponible
                     actual_price = vuelo_data.get('precio') or vuelo_data.get('total')
+                    if isinstance(actual_price, list) and len(actual_price) > 0:
+                        actual_price = actual_price[0]
                 
                 # Construir mensaje de éxito con ruta
                 ruta_str = f"{origin}-{destination}"

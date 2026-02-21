@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🦌 CERVO AI - Chatbot de Reservaciones de Vuelos
 
 Bot conversacional inteligente para búsqueda y reservación de vuelos usando Gemini AI.
@@ -11,7 +10,12 @@ pip install -r requirements.txt
 ```
 
 ### 2. Configurar variables de entorno
-Edita el archivo `.env` con tus credenciales:
+Copia el archivo `.env.example` a `.env` y edita con tus credenciales:
+```bash
+cp .env.example .env
+```
+
+Configura las siguientes variables:
 - `GEMINI_API_KEY`: Tu API key de Google Gemini
 - `WATI_API_TOKEN`: Token de WATI para WhatsApp
 - `KIU_API_TOKEN`: Token de la API de reservaciones
@@ -65,7 +69,7 @@ Envía: **`salir`**
 
 ## 📝 Notas
 
-- El bot usa **Gemini 3 Flash** para conversación natural
+- El bot usa **Gemini 2.5 Flash** para conversación natural
 - Soporta búsquedas de vuelos nacionales e internacionales
 - Maneja reservas con múltiples pasajeros
 - Detecta automáticamente códigos PNR
@@ -77,9 +81,12 @@ Para probar localmente sin WATI:
 2. Escribe "cervo ai" para activar el bot
 3. Comienza a conversar
 
+## 🔒 Seguridad
+
+- **NUNCA** subas el archivo `.env` con credenciales reales
+- Usa `.env.example` como plantilla
+- Mantén tus API keys privadas
+
 ---
 
 **Desarrollado para Cervo Travel** 🦌✈️
-=======
-# chatbotcervo
->>>>>>> 2b81854d72af955332c80db6dac68f1e8732edeb
